@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class CloseUI : MonoBehaviour
 {
-	public Canvas canvas;
+	public Image BackGround;
 	public Button targetButton;
 
 	void Start()
@@ -16,6 +16,6 @@ public class CloseUI : MonoBehaviour
 
 	void OnButtonClicked()
 	{
-		canvas.enabled = false;
+		BackGround.gameObject.SetActive(false);
 	}
 }
