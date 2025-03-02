@@ -1,15 +1,10 @@
-.vs/
-Assembly-Csharp.csproj
-*.sln
-*.csproj
-Library/
-Logs/
-Packages/
-Temp/
-[Oo]bj/
-Unity.Analytics.DataPrivacy.csproj
-Unity.CollabProxy.Editor.csproj
-Unity.PackageManagerUI.Editor.csproj
-Unity.TextMeshPro.Editor.csproj
-Unity.TextMeshPro.csproj
-
+# ================
+# Unity 生成的文件
+# ================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
