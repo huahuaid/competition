@@ -5,9 +5,10 @@ public class NextUI : MonoBehaviour
 {
 	public Button targetButton;
 	public GameObject planeToClose; 
-	public GameObject planeToOpen; 
+	public GameObject planeToOpen;
+    public ClickUITextDetector clickUITextDetector;
 
-	void Start()
+    void Start()
 	{
 		if (targetButton != null)
 		{
@@ -17,7 +18,18 @@ public class NextUI : MonoBehaviour
 
 	void OnButtonClicked()
 	{
-		planeToClose.SetActive(false);
-		planeToOpen.SetActive(true);
-	}
+        if (clickUITextDetector != null && clickUITextDetector.IsAnswerCorrect)
+        {
+            planeToClose.SetActive(false);
+            if(planeToOpen != null)
+            {
+                planeToOpen.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            Debug.Log("回答错误，无法切换界面。" + clickUITextDetector.IsAnswerCorrect);
+        }
+    }
 }
