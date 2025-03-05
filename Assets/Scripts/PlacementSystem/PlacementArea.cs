@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlacementArea : MonoBehaviour
@@ -34,6 +35,7 @@ public class PlacementArea : MonoBehaviour
 			if (enteredItemNames.IsSupersetOf(predefinedItemNames))
 			{
 				isAllPrefab = true;
+				NextSence();
 			}
 		}
 		if (isAllPrefab)
@@ -60,5 +62,9 @@ public class PlacementArea : MonoBehaviour
 		{
 			isCurrentObjectInPlacementArea = false;
 		}
+	}
+
+	void NextSence(){
+		SceneManager.LoadScene(2);
 	}
 }

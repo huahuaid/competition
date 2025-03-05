@@ -48,6 +48,7 @@ public class InventoryUI : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Y))
 		{
 			InventoryPlane.SetActive(!InventoryPlane.activeSelf);
+			followSpriteRenderer.sprite = null;
 		}
 		InitializeSlotImages(); 
 	}
