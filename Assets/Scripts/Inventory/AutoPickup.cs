@@ -26,7 +26,6 @@ public class AutoPickup : MonoBehaviour
 				int amount = pickupableItem.amount;
 				if (inventoryManager.AddItem(itemobject,amount))
 				{
-					Debug.Log(pickupableItem.item.itemName);
 					Destroy(other.gameObject);
 				}
 			}

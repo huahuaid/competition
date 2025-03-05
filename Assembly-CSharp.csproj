@@ -60,6 +60,7 @@
     <Analyzer Include="E:\unity\2022.3.53f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScence.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\DialogueButton.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
+    <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />

@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Item
-  - 
+  - Ground
   - Introduce
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 4060242163
+    locked: 0
+  - name: NPC
+    uniqueID: 1369337085
     locked: 0
   - name: Player
     uniqueID: 2835569479
