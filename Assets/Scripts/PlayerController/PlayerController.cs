@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 		player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("NPC"))
 		{

@@ -68,7 +68,9 @@
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
+    <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />

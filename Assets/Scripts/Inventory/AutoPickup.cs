@@ -2,16 +2,20 @@ using UnityEngine;
 
 public class AutoPickup : MonoBehaviour
 {
-	InventoryManager inventoryManager = new InventoryManager();
-
+	public GameObject Inventory;
+	public GameObject InventoryPlane;
+	private InventoryManager inventoryManager;
 	void Start()
 	{
-
-	}
+		inventoryManager = Inventory.GetComponent<InventoryManager>(); 
+}
 
 	void Update()
 	{
-
+		if (Input.GetKeyDown(KeyCode.Y))
+		{
+			InventoryPlane.SetActive(!InventoryPlane.activeSelf);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -25,9 +29,8 @@ public class AutoPickup : MonoBehaviour
 				int amount = pickupableItem.amount;
 				if (inventoryManager.AddItem(itemobject,amount))
 				{
-					Debug.Log($"拾取物品: {itemobject.itemName}, 数量: {amount}");
-				}
 				Destroy(other.gameObject);
+				}
 			}
 		}
 	}

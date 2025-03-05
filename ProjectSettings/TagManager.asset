@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NPC
   - Item
+  - Follow
+  - Area
   layers:
   - Default
   - TransparentFX

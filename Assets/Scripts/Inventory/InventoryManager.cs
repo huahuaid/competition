@@ -52,7 +52,6 @@ public class InventoryManager : MonoBehaviour
 	{
 		if (item == null || amount <= 0)
 		{
-			Debug.LogWarning("无效的物品或数量。");
 			return false;
 		}
 
@@ -66,7 +65,6 @@ public class InventoryManager : MonoBehaviour
 					int amountToAdd = Mathf.Min(spaceAvailable, amount);
 					inventory[i].amount += amountToAdd;
 					amount -= amountToAdd;
-
 					if (amount <= 0) return true;
 				}
 			}
@@ -74,7 +72,6 @@ public class InventoryManager : MonoBehaviour
 
 		for (int i = 0; i < inventory.Count; i++)
 		{
-			Debug.Log("HUAHUA");
 			if (inventory[i].item == null)
 			{
 				inventory[i].item = item;
@@ -85,43 +82,27 @@ public class InventoryManager : MonoBehaviour
 			}
 		}
 
-		Debug.LogWarning("背包已满，无法添加更多物品。");
 		return false; 
 	}
 
-	public bool RemoveItem(Item item, int amount = 1)
+	public bool RemoveItemByName(string itemName)
 	{
-		if (item == null || amount <= 0)
+		if (string.IsNullOrEmpty(itemName))
 		{
-			Debug.LogWarning("无效的物品或数量。");
 			return false;
 		}
 
 		for (int i = 0; i < inventory.Count; i++)
 		{
-			if (inventory[i].item == item)
+			if (inventory[i].item != null && inventory[i].item.itemName == itemName)
 			{
-				if (inventory[i].amount >= amount)
-				{
-					inventory[i].amount -= amount;
-					if (inventory[i].amount <= 0)
-					{
-						inventory[i].item = null;
-						inventory[i].amount = 0;
-					}
-					return true; 
-				}
-				else
-				{
-					amount -= inventory[i].amount;
-					inventory[i].item = null;
-					inventory[i].amount = 0;
-				}
+				inventory[i] = new ItemStack(null, 0);
+				Debug.Log($"成功删除物品: {itemName}");
+				return true;
 			}
 		}
 
-		Debug.LogWarning("未找到指定物品或数量不足。");
-		return false; 
+		return false;
 	}
 
 	public ItemStack FindItemById(int itemId)
@@ -161,7 +142,6 @@ public class InventoryManager : MonoBehaviour
 
 	public void PrintInventory()
 	{
-		Debug.Log("当前背包内容：");
 		for (int i = 0; i < inventory.Count; i++)
 		{
 			if (inventory[i].item != null)
