@@ -3,21 +3,37 @@ using UnityEngine.UI;
 
 public class DialogueButton : MonoBehaviour
 {
+	public Image dialogueButton;
 	public Transform targetTransform;
 	public Image image;
 	public float yOffset = 300f;
+	public float xOffset = 300f;
+
+	private npcTrigger npcTrigger;
 
 	void Start()
 	{
+		npcTrigger = gameObject.GetComponent<npcTrigger>();
+
 		if (targetTransform != null && image != null)
 		{
 			Vector3 screenPosition = Camera.main.WorldToScreenPoint(targetTransform.position);
 
 			screenPosition.y += yOffset;
+			screenPosition.x += xOffset;
 
 			image.rectTransform.position = screenPosition;
 		}
 	}
 
-	
+	void Update(){
+		if (npcTrigger.isTargetNPC && npcTrigger.toggleDialoguePlane == false)
+		{
+			dialogueButton.gameObject.SetActive(true);
+		}
+		else
+		{
+			dialogueButton.gameObject.SetActive(false);
+		}
+	}
 }
