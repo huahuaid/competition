@@ -7,6 +7,21 @@ public class PlaceableObject : MonoBehaviour
 	public SpriteRenderer spriteRenderer;
 	public static string itemName;
 
+	public static PlaceableObject Instance;
+
+	private void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	void Update()
 	{
 		if (isCurrentObjectInPlacementArea && Input.GetMouseButtonDown(0))

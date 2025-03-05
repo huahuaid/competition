@@ -5883,7 +5883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 312877965}
-  InventoryPlane: {fileID: 2021515222}
 --- !u!1 &1030753221
 GameObject:
   m_ObjectHideFlags: 0
@@ -7447,7 +7446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1904966208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7820,7 +7819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2021515223
 Transform:
   m_ObjectHideFlags: 0
@@ -7853,6 +7852,7 @@ MonoBehaviour:
   - {fileID: 259345678}
   - {fileID: 2097862367}
   - {fileID: 1928023843}
+  InventoryPlane: {fileID: 1904966207}
   Inventory: {fileID: 312877965}
   followObject: {fileID: 1117217836}
   slotSprite: {fileID: 581175609, guid: 3fe1874fd57aeea49a45002876877f94, type: 3}
