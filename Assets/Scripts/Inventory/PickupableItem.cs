@@ -7,10 +7,16 @@ public class PickupableItem : MonoBehaviour
 	public Item item;
 	public int amount = 1;
 
+	private InventoryManager inventoryManager;
+
 	void Start(){
+		inventoryManager = InventoryManager.Instance;
 		if (PlacementArea.isAllPrefab)
 		{
 			gameObject.SetActive(false);
 		}
+	}
+
+	void Update(){
 	}
 }
