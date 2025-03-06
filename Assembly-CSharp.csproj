@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
+    <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
