@@ -18,23 +18,11 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		Walk();
-		NextScene();
 	}
 
 	void Walk(){
 		float moveDir = Input.GetAxis("Horizontal");
 		Vector2 movement = new Vector2(moveDir, player.velocity.y);
 		player.MovePosition(player.position + movement * moveSpeed * Time.fixedDeltaTime);
-	}
-
-	void NextScene(){
-		if(player.position.x >= nextLevelPosition){
-			nextLevelScence.LoadNextScene();
-			player.position = new Vector2(-2f, player.position.y);
-		}
-		else if(player.position.x <= preLevelPosition){
-			nextLevelScence.LoadPreScene();
-			player.position = new Vector2(7f, player.position.y);
-		}
 	}
 }

@@ -1,8 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // 引入场景管理命名空间
+using UnityEngine.SceneManagement;
 
 public class NextLevelScence : MonoBehaviour
 {
+	public int SceneIndex;
+
 	void Start()
 	{
 
@@ -13,21 +15,32 @@ public class NextLevelScence : MonoBehaviour
 
 	}
 
-
-	public void LoadNextScene()
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-		int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
-		SceneManager.LoadScene(nextSceneIndex);
+		if (other.CompareTag("Player"))
+		{
+			ChangeScene();
+		}
 	}
 
-	public void LoadPreScene()
-	{
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-		int nextSceneIndex = (currentSceneIndex - 1) % SceneManager.sceneCountInBuildSettings;
-		SceneManager.LoadScene(nextSceneIndex);
+	public void ChangeScene(){
+		SceneManager.LoadScene(SceneIndex);
 	}
+
+	// public void LoadNextScene()
+	// {
+	// 	int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+	//
+	// 	int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+	// 	SceneManager.LoadScene(nextSceneIndex);
+	// }
+	//
+	// public void LoadPreScene()
+	// {
+	// 	int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+	//
+	// 	int nextSceneIndex = (currentSceneIndex - 1) % SceneManager.sceneCountInBuildSettings;
+	// 	SceneManager.LoadScene(nextSceneIndex);
+	// }
 }
 
