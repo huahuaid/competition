@@ -12,32 +12,52 @@ public class PlacementArea : MonoBehaviour
 
 	public static bool isAllPrefab;
 	private string itemName;
+	private PlaceableObject placeableObject;
 	private HashSet<string> enteredItemNames = new HashSet<string>();
-	private HashSet<string> predefinedItemNames = new HashSet<string>
-	{
-		"wheel",
-	};
+
+	public List<string> predefinedItemNamesList = new List<string>();
+
+	private HashSet<string> predefinedItemNames;
 
 	void Start()
 	{
 		inventoryManager = inventory.GetComponent<InventoryManager>();
+
+		predefinedItemNames = new HashSet<string>(predefinedItemNamesList);
 	}
 
 	void Update()
 	{
-		if (PlaceableObject.isVisablePut && isCurrentObjectInPlacementArea)
+		HandlePlacement();
+		UpdateSpriteVisibility();
+	}
+
+	// Handles the logic for placing objects in the placement area.
+	private void HandlePlacement()
+	{
+		if (placeableObject != null && placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
 		{
-
-			inventoryManager.RemoveItemByName(PlaceableObject.itemName);
-
-			enteredItemNames.Add(itemName);
-
-			if (enteredItemNames.IsSupersetOf(predefinedItemNames))
-			{
-				isAllPrefab = true;
-				NextSence();
-			}
+			ProcessItemPlacement();
 		}
+	}
+
+	// Processes the placement of an item, removing it from the inventory and checking if all required items are placed.
+	private void ProcessItemPlacement()
+	{
+		inventoryManager.RemoveItemByName(itemName);
+		enteredItemNames.Add(itemName);
+		placeableObject.isVisablePut = false;
+
+		if (enteredItemNames.IsSupersetOf(predefinedItemNames))
+		{
+			isAllPrefab = true;
+			NextScene();
+		}
+	}
+
+	// Updates the visibility of the sprite based on whether all required items are placed.
+	private void UpdateSpriteVisibility()
+	{
 		if (isAllPrefab)
 		{
 			Color color = spriteRenderer.color;
@@ -51,8 +71,8 @@ public class PlacementArea : MonoBehaviour
 		if (other.CompareTag("Follow"))
 		{
 			isCurrentObjectInPlacementArea = true;
-
-			itemName = PlaceableObject.itemName;
+			placeableObject = other.GetComponent<PlaceableObject>();
+			itemName = placeableObject.itemName;
 		}
 	}
 
@@ -64,7 +84,9 @@ public class PlacementArea : MonoBehaviour
 		}
 	}
 
-	void NextSence(){
+	// Loads the next scene.
+	private void NextScene()
+	{
 		SceneManager.LoadScene(2);
 	}
 }

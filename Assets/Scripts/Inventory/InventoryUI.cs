@@ -34,22 +34,26 @@ public class InventoryUI : MonoBehaviour
 
 	private void Start()
 	{
+		// get InventoryManger for add ,remove ,get  
 		inventoryManager = Inventory.GetComponent<InventoryManager>();
 		InitializeSlotImages(); 
 	}
 
 	private void Update(){
+		// follow mouse
 		if (followObject != null)
 		{
 			Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			mousePosition.z = 0; 
 			followObject.transform.position = mousePosition;
 		}
+		// open backpack
 		if (Input.GetKeyDown(KeyCode.Y))
 		{
 			InventoryPlane.SetActive(!InventoryPlane.activeSelf);
 			followSpriteRenderer.sprite = null;
 		}
+		// init InventoryUI
 		InitializeSlotImages(); 
 	}
 
@@ -66,6 +70,7 @@ public class InventoryUI : MonoBehaviour
 				image.sprite = slotItem[i].icon;
 				image.enabled = true; 
 				int index = i;
+				// choice different object
 				button.onClick.AddListener(()=>OnSlotClicked(index));
 			}
 			else
@@ -81,7 +86,7 @@ public class InventoryUI : MonoBehaviour
 		{
 			followSpriteRenderer = followObject.GetComponent<SpriteRenderer>();
 			followSpriteRenderer.sprite = slotItem[slotIndex].icon;
-			PlaceableObject.itemName = slotItem[slotIndex].itemName;
+			followObject.GetComponent<PlaceableObject>().itemName = slotItem[slotIndex].itemName;
 		}	
 	}
 }
