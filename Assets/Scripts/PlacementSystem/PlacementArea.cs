@@ -14,15 +14,16 @@ public class PlacementArea : MonoBehaviour
 	private string itemName;
 	private PlaceableObject placeableObject;
 	private HashSet<string> enteredItemNames = new HashSet<string>();
-	private HashSet<string> predefinedItemNames = new HashSet<string>
-	{
-		"wheel",
-			"Frame"
-	};
+
+	public List<string> predefinedItemNamesList = new List<string>();
+
+	private HashSet<string> predefinedItemNames;
 
 	void Start()
 	{
 		inventoryManager = inventory.GetComponent<InventoryManager>();
+
+		predefinedItemNames = new HashSet<string>(predefinedItemNamesList);
 	}
 
 	void Update()
