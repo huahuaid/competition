@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlaceableObject : MonoBehaviour
 {
 	public static bool isCurrentObjectInPlacementArea;
-	public static bool isVisablePut;
+	public bool isVisablePut;
 	public SpriteRenderer spriteRenderer;
-	public static string itemName;
+	public string itemName;
 
 	public static PlaceableObject Instance;
 
