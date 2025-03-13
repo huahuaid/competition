@@ -7593,7 +7593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ceaac88ac278764f8b446ed4bb04183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVisablePut: 0
   spriteRenderer: {fileID: 1117217837}
+  itemName: 
 --- !u!1 &1160704864
 GameObject:
   m_ObjectHideFlags: 0
@@ -9337,6 +9339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1580671122}
   inventory: {fileID: 312877965}
+  predefinedItemNamesList:
+  - wheel
+  - Frame
 --- !u!50 &1580671125
 Rigidbody2D:
   serializedVersion: 4
