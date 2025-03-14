@@ -7596,6 +7596,7 @@ MonoBehaviour:
   isVisablePut: 0
   spriteRenderer: {fileID: 1117217837}
   itemName: 
+  inventoryManager: {fileID: 312877966}
 --- !u!1 &1160704864
 GameObject:
   m_ObjectHideFlags: 0
