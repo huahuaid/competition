@@ -5,7 +5,6 @@ public class CloseUI : MonoBehaviour
 {
 	public Image BackGround;
 	public Button targetButton;
-
 	void Start()
 	{
 		if (targetButton != null)
@@ -13,7 +12,6 @@ public class CloseUI : MonoBehaviour
 			targetButton.onClick.AddListener(OnButtonClicked);
 		}
 	}
-
 	void OnButtonClicked()
 	{
 		BackGround.gameObject.SetActive(false);
