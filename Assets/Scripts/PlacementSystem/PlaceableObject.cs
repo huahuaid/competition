@@ -7,8 +7,9 @@ public class PlaceableObject : MonoBehaviour
 	public bool isVisablePut;
 	public SpriteRenderer spriteRenderer;
 	public string itemName;
-
 	public static PlaceableObject Instance;
+
+	public InventoryManager inventoryManager;
 
 	private void Awake()
 	{
@@ -29,6 +30,7 @@ public class PlaceableObject : MonoBehaviour
 		{
 			isVisablePut = true;
 			spriteRenderer.sprite = null;
+			inventoryManager.RemoveItemByName(itemName);
 		}
 		else if(!isPutOnThePlacementArea && Input.GetMouseButtonDown(0))
 		{
