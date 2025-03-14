@@ -59,7 +59,9 @@ public class InventoryUI : MonoBehaviour
 
 	private void InitializeSlotImages()
 	{
+		// get from InventoryManager
 		slotItem = inventoryManager.AllItem();
+
 		for (int i = 0; i < slotObjects.Count; i++)
 		{
 			Image image = slotObjects[i].GetComponent<Image>();

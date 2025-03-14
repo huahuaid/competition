@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlaceableObject : MonoBehaviour
 {
+	public static bool isPutOnThePlacementArea;
 	public static bool isCurrentObjectInPlacementArea;
 	public bool isVisablePut;
 	public SpriteRenderer spriteRenderer;
@@ -28,6 +29,11 @@ public class PlaceableObject : MonoBehaviour
 		{
 			isVisablePut = true;
 			spriteRenderer.sprite = null;
+		}
+		else if(!isPutOnThePlacementArea && Input.GetMouseButtonDown(0))
+		{
+			spriteRenderer.sprite = null;
+			itemName = null;
 		}
 	}
 
