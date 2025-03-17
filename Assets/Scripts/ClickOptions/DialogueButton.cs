@@ -6,8 +6,8 @@ public class DialogueButton : MonoBehaviour
 	public Image dialogueButton;
 	public Transform targetTransform;
 	public Image image;
-	public float yOffset = 300f;
-	public float xOffset = 300f;
+	public float yOffset;
+	public float xOffset;
 
 	private npcTrigger npcTrigger;
 
