@@ -66,7 +66,7 @@ public class skip1 : MonoBehaviour, IPointerClickHandler
 		{
 			image2.color = new Color(image2.color.r, image2.color.g, image2.color.b, 0);
 		}
-		ChangeScene("Scene_First_Level");
+		ChangeScene("Scene_Zero_Level");
 	}
 
 	void StartVideoPlayback()

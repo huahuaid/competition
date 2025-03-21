@@ -62,15 +62,15 @@ public class NPCController : MonoBehaviour
 
 		npcTrigger.animator.SetBool("isWalk", true);
 
-		Vector3 moveDirection = (targetPosition - transform.position).normalized;
-
-		if (moveDirection.x > 0)
+		if (targetPosition.x
+				> gameObject.transform.position.x)
 		{
-			transform.localScale = new Vector3(-1, 1, 1);
+			Debug.Log("HUAHUA");
+			gameObject.transform.localScale = new Vector3(-1,1,1);
 		}
-		else if (moveDirection.x < 0)
+		else
 		{
-			transform.localScale = new Vector3(1, 1, 1);
+			gameObject.transform.localScale = new Vector3(1,1,1);
 		}
 
 		transform.position = Vector3.MoveTowards(  

@@ -48,11 +48,11 @@ TagManager:
   - name: FontGround
     uniqueID: 4135692149
     locked: 0
-  - name: NPC
-    uniqueID: 1369337085
-    locked: 0
   - name: Item
     uniqueID: 2891345193
+    locked: 0
+  - name: NPC
+    uniqueID: 1369337085
     locked: 0
   - name: Player
     uniqueID: 2835569479
