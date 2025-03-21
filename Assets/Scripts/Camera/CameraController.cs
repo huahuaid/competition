@@ -9,16 +9,17 @@ public class CameraController : MonoBehaviour
 	public Vector2 maxPosition;
 
 	private bool isFollowing = true;
+	private static Animator animator;
 
 	void Start()
 	{
-		if (target != null)
-		{
-			Vector3 startPos = target.position;
-			startPos.x = Mathf.Clamp(startPos.x, minPosition.x, maxPosition.x);
-			startPos.y = Mathf.Clamp(startPos.y, minPosition.y, maxPosition.y);
-			startPos.z = -10f;
-			transform.position = startPos;
+		if (target != null){
+			if(transform.position != target.position){
+				Vector3 targetPos = target.position;
+				targetPos.x = Mathf.Clamp(targetPos.x,minPosition.x,maxPosition.x);
+				targetPos.y = Mathf.Clamp(targetPos.y,minPosition.y,maxPosition.y);
+				transform.position = Vector3.Lerp(transform.position,targetPos,smoothing);
+			}
 		}
 	}
 
@@ -51,6 +52,14 @@ public class CameraController : MonoBehaviour
 	{
 		minPosition = minPos;
 		maxPosition = maxPos;
+	}
+
+	public static void ShakeCamera(){
+		animator.SetBool("isCameraShake",true);
+	}
+
+	public static void OverShakeCamera(){
+		animator.SetBool("isCameraShake",false);
 	}
 }
 

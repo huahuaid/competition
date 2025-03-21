@@ -75,9 +75,12 @@
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCStateMachine.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
+    <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
+    <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
