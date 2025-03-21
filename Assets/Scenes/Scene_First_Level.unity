@@ -3587,7 +3587,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1459397817
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 814295935, guid: d7956896c5feda94aa93d6d01b74fbdc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4812,7 +4812,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1459397817
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1395357597, guid: 41bf6ae03477eda478708f834615bd92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4840,7 +4840,7 @@ MonoBehaviour:
   dialogueButton: {fileID: 1011112868}
   targetTransform: {fileID: 1290805981}
   image: {fileID: 1011112868}
-  yOffset: 0
+  yOffset: 300
   xOffset: 0
 --- !u!70 &1290805986
 CapsuleCollider2D:
@@ -5072,8 +5072,8 @@ MonoBehaviour:
   dialogueButton: {fileID: 950804474}
   targetTransform: {fileID: 1790812570}
   image: {fileID: 950804474}
-  yOffset: 100
-  xOffset: 100
+  yOffset: 300
+  xOffset: 0
 --- !u!50 &1790812574
 Rigidbody2D:
   serializedVersion: 4
@@ -5140,7 +5140,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1459397817
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -1395357597, guid: 41bf6ae03477eda478708f834615bd92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
