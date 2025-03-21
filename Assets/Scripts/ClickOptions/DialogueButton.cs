@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class DialogueButton : MonoBehaviour
 {
-	public Image dialogueButton;
 	public Transform targetTransform;
-	public Image image;
+	public GameObject targetObject ;
 	public float yOffset;
 	public float xOffset;
 
@@ -14,26 +12,24 @@ public class DialogueButton : MonoBehaviour
 	void Start()
 	{
 		npcTrigger = gameObject.GetComponent<npcTrigger>();
-
-		if (targetTransform != null && image != null)
-		{
-			Vector3 screenPosition = Camera.main.WorldToScreenPoint(targetTransform.position);
-
-			screenPosition.y += yOffset;
-			screenPosition.x += xOffset;
-
-			image.rectTransform.position = screenPosition;
-		}
 	}
 
 	void Update(){
+		if (targetTransform != null)
+		{
+			Vector3 screenPosition = targetTransform.position;  
+			screenPosition.y += yOffset;  
+			screenPosition.x += xOffset;  
+			targetObject.transform.position = screenPosition;
+		}
+
 		if (npcTrigger.isTargetNPC && npcTrigger.toggleDialoguePlane == false)
 		{
-			dialogueButton.gameObject.SetActive(true);
+			targetObject.SetActive(true);
 		}
 		else
 		{
-			dialogueButton.gameObject.SetActive(false);
+			targetObject.SetActive(false);
 		}
 	}
 }
