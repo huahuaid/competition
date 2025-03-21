@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCStateMachine.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
+    <Compile Include="Assets\Scripts\Scene\NextLevelScenceTrigger.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />

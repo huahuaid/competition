@@ -522,8 +522,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTargetNPC: 0
+  isDialogue: 0
   mainPlane: {fileID: 0}
   toggleDialoguePlane: 0
+  playerObject: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!70 &705354475
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -571,9 +574,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547c7e934259e14792aaa382cbc95c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueButton: {fileID: 0}
   targetTransform: {fileID: 705354473}
-  image: {fileID: 0}
+  targetObject: {fileID: 0}
   yOffset: 250
   xOffset: 300
 --- !u!50 &705354477
@@ -2639,8 +2641,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isTargetNPC: 0
+  isDialogue: 0
   mainPlane: {fileID: 0}
   toggleDialoguePlane: 0
+  playerObject: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!70 &1147077295
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2688,9 +2693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4547c7e934259e14792aaa382cbc95c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueButton: {fileID: 0}
   targetTransform: {fileID: 1147077293}
-  image: {fileID: 0}
+  targetObject: {fileID: 0}
   yOffset: 250
   xOffset: 100
 --- !u!50 &1147077297
@@ -2938,7 +2942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 719077938662436655, guid: 4cba0e824c9381d428111f5feed286a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.85
+      value: -2.895
       objectReference: {fileID: 0}
     - target: {fileID: 719077938662436655, guid: 4cba0e824c9381d428111f5feed286a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3190,7 +3194,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -234725133
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.8333334, y: 0.8333334, z: 0}
@@ -4081,6 +4085,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1626581043456044265, guid: c27d1c2eef764cf49a8533dc840b4163, type: 3}
+      propertyPath: SceneIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4454282736620485591, guid: c27d1c2eef764cf49a8533dc840b4163, type: 3}
       propertyPath: m_Name
       value: Door

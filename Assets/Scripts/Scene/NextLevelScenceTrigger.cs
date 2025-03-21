@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextLevelScence : MonoBehaviour
+public class NextLevelScenceTrigger : MonoBehaviour
 {
 	public int SceneIndex;
 	private bool isVisableChangScene;
@@ -13,25 +13,13 @@ public class NextLevelScence : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.E) && isVisableChangScene)
-		{
-			ChangeScene();
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player"))
 		{
-			isVisableChangScene = true;
-		}
-	}
-
-	void OnTriggerExit2D(Collider2D other)
-	{
-		if (other.CompareTag("Player"))
-		{
-			isVisableChangScene = false;
+			ChangeScene();
 		}
 	}
 
