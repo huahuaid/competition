@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -6,24 +5,20 @@ public class PlacementArea : MonoBehaviour
 {
 	private bool isCurrentObjectInPlacementArea;
 	public SpriteRenderer spriteRenderer;
-
-	public GameObject inventory;
+	public Animator animator;
 	private InventoryManager inventoryManager;
-
-	public static bool isAllPrefab;
 	private string itemName;
 	private PlaceableObject placeableObject;
-	private HashSet<string> enteredItemNames = new HashSet<string>();
-
-	public List<string> predefinedItemNamesList = new List<string>();
-
-	private HashSet<string> predefinedItemNames;
+	public AssemblyProcessor assemblyProcessor;
 
 	void Start()
 	{
-		inventoryManager = inventory.GetComponent<InventoryManager>();
-
-		predefinedItemNames = new HashSet<string>(predefinedItemNamesList);
+		inventoryManager = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
+		// 确保AssemblyProcessor引用有效
+		if (assemblyProcessor == null)
+		{
+			assemblyProcessor = FindObjectOfType<AssemblyProcessor>();
+		}
 	}
 
 	void Update()
@@ -32,33 +27,46 @@ public class PlacementArea : MonoBehaviour
 		UpdateSpriteVisibility();
 	}
 
-	// Handles the logic for placing objects in the placement area.
 	private void HandlePlacement()
 	{
-		if (placeableObject != null && placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
+		if (placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
 		{
 			ProcessItemPlacement();
 		}
 	}
 
-	// Processes the placement of an item, removing it from the inventory and checking if all required items are placed.
 	private void ProcessItemPlacement()
 	{
-		inventoryManager.RemoveItemByName(itemName);
-		enteredItemNames.Add(itemName);
-		placeableObject.isVisablePut = false;
+		// 使用AssemblyProcessor处理组装逻辑
+		bool assemblySuccess = assemblyProcessor.TryAssembleComponent(itemName);
 
-		if (enteredItemNames.IsSupersetOf(predefinedItemNames))
+		Debug.Log(assemblyProcessor.AssemblyProgressStep+" "+AssemblyProcessor.isCurrentStepCorrect);
+
+		if (assemblySuccess)
 		{
-			isAllPrefab = true;
-			NextScene();
+			ErrorDialogManager.isInError = false;
+				// 这里传一个当前进度
+				// 当前进度错误就返回错误弹窗
+				// 对了就返回下一个逻辑
+				// 放在一个类里面处理这个问题
+
+				inventoryManager.RemoveItemByName(itemName);
+			placeableObject.isVisablePut = false;
+
+			// 检查AssemblyProcessor中的完成状态
+			if (AssemblyProcessor.isAllPrefab)
+			{
+				BeginAnimator();
+			}
+		}else{
+			placeableObject.isVisablePut = false;
 		}
 	}
 
-	// Updates the visibility of the sprite based on whether all required items are placed.
 	private void UpdateSpriteVisibility()
 	{
-		if (isAllPrefab)
+		// 根据AssemblyProcessor的状态更新显示
+		if (AssemblyProcessor.isAllPrefab)
 		{
 			Color color = spriteRenderer.color;
 			color.a = 1f;
@@ -84,9 +92,13 @@ public class PlacementArea : MonoBehaviour
 		}
 	}
 
-	// Loads the next scene.
 	private void NextScene()
 	{
 		SceneManager.LoadScene(2);
+	}
+
+	private void BeginAnimator()
+	{
+		animator.SetBool("iswork", true);
 	}
 }

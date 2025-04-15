@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Follow
   - Area
+  - Inventory
   layers:
   - Default
   - TransparentFX

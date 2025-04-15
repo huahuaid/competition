@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Frame
   m_EditorClassIdentifier: 
   id: 1
-  itemName: Frame
+  itemName: WaterwheelAxle
   icon: {fileID: -241792607, guid: d7956896c5feda94aa93d6d01b74fbdc, type: 3}
   description: The wheel for finish waterwheel
   maxStack: 2
