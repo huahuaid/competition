@@ -11,7 +11,6 @@ public class InventoryUI : MonoBehaviour
 	public GameObject InventoryPlane;
 	public static InventoryUI Instance;
 
-	public GameObject Inventory;
 	public GameObject followObject;
 	public Sprite slotSprite;
 
@@ -35,7 +34,7 @@ public class InventoryUI : MonoBehaviour
 	private void Start()
 	{
 		// get InventoryManger for add ,remove ,get  
-		inventoryManager = Inventory.GetComponent<InventoryManager>();
+		inventoryManager = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
 		InitializeSlotImages(); 
 	}
 

@@ -65,7 +65,6 @@ public class NPCController : MonoBehaviour
 		if (targetPosition.x
 				> gameObject.transform.position.x)
 		{
-			Debug.Log("HUAHUA");
 			gameObject.transform.localScale = new Vector3(-1,1,1);
 		}
 		else

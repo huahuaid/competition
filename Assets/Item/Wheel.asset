@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wheel
   m_EditorClassIdentifier: 
   id: 0
-  itemName: wheel
+  itemName: MainRib
   icon: {fileID: 21300000, guid: 8c523cdba450dda43ba451ffb3b4345a, type: 3}
   description: The wheel for finish waterwheel
   maxStack: 2

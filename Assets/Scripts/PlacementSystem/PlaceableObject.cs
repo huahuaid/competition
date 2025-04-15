@@ -30,7 +30,6 @@ public class PlaceableObject : MonoBehaviour
 		{
 			isVisablePut = true;
 			spriteRenderer.sprite = null;
-			inventoryManager.RemoveItemByName(itemName);
 		}
 		else if(!isPutOnThePlacementArea && Input.GetMouseButtonDown(0))
 		{
