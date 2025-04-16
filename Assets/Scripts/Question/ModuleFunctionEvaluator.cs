@@ -37,7 +37,7 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 					break;
 				case 2:
 					Debug.Log("HUAHUAFUNCTIONTWO");
-					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;;
+					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
 					break;
 				default:
 					break;
