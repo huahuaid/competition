@@ -20,6 +20,7 @@ public class ErrorDialogManager : MonoBehaviour
 	void Update()
 	{
 		CurrentStepError();
+		CurrentPositionError();
 	}
 
 	private void CurrentStepError(){
@@ -32,5 +33,17 @@ public class ErrorDialogManager : MonoBehaviour
 			AssemblyProcessor.isCurrentStepCorrect = true;
 		}
 		dialogStepError.SetActive(isStepPopup);
+	}
+
+	private void CurrentPositionError(){
+		if (isPositionPopup == false && ModulePositioningJudge.isPositionCorrect == ModulePositioningJudge.PositionStatus.Incorrect){
+			isPositionPopup = true;
+		}
+		if (isPositionPopup == true && Input.GetKeyDown(KeyCode.Escape))
+		{
+			isPositionPopup = false;
+			ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
+		}
+		dialogStepError.SetActive(isPositionPopup);
 	}
 }
