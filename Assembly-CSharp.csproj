@@ -61,12 +61,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CG\startgame.cs" />
+    <Compile Include="Assets\Scripts\Question\ModuleFunctionEvaluator.cs" />
     <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
     <Compile Include="Assets\Scripts\CG\showskip.cs" />
     <Compile Include="Assets\Scripts\CG\begin.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScence.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
+    <Compile Include="Assets\Scripts\Question\ModulePositioningJudge.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\DialogueButton.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />

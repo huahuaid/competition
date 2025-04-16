@@ -98,5 +98,5 @@ public class AssemblyProcessor : MonoBehaviour
 	/// <summary>
 	/// 获取当前组装进度(0-1)
 	/// </summary>
-	public float AssemblyProgressStep => _validator.CurrentStep;
+	public int AssemblyProgressStep => _validator.CurrentStep;
 }
