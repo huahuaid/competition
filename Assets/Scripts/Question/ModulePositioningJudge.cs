@@ -38,7 +38,15 @@ public class ModulePositioningJudge : MonoBehaviour
 					}
 					break;
 				case 2:
-					Debug.Log("HUAHUATWO");
+					if (Input.GetKeyDown(KeyCode.I))
+					{
+						Debug.Log("HUAHUATWO");
+						isPositionCorrect = PositionStatus.Correct;
+					}
+					else if (Input.GetKeyDown(KeyCode.N))
+					{
+						isPositionCorrect = PositionStatus.Incorrect;
+					}
 					break;
 				case 3:
 					Debug.Log("HUAHUATHREE");
