@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\CG\skip1.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
+    <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\Error\ErrorDialogManager.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyValidator.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
-    <Compile Include="Assets\Scripts\NPC\NPCTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
