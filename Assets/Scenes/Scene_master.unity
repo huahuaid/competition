@@ -4716,6 +4716,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483f332ededa31c408ccfc8c26a27dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTransform: {fileID: 1433436642}
+  yOffset: 2
+  xOffset: 0
   dialogStepError: {fileID: 2131462747}
   dialogPositionError: {fileID: 371631150}
   dialogFunctionError: {fileID: 0}
