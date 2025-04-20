@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\CG\skip1.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
+    <Compile Include="Assets\Scripts\Interaction\InteractiveDialogBox.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCStateMachine.cs" />
