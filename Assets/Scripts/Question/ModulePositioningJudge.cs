@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ModulePositioningJudge : MonoBehaviour
 {
+	public GameObject[] assemblyProcesses; 
+	public AssemblyProcessQuestion[] questions; 
 	public static PositionStatus isPositionCorrect = PositionStatus.Waiting;
 	public enum PositionStatus
 	{
@@ -24,32 +26,46 @@ public class ModulePositioningJudge : MonoBehaviour
 	private void WaterwheelPositionValidator(){
 		if (AssemblyProcessor.isCurrentStepCorrect && !ErrorDialogManager.isInError)
 		{
+			int num = assemblyProcessor.AssemblyProgressStep - 1;
 			switch (assemblyProcessor.AssemblyProgressStep)
 			{
 				case 1:
-					if (Input.GetKeyDown(KeyCode.I))
+					assemblyProcesses[num].SetActive(true);
+					if (questions[num].isCorrect)
 					{
-						Debug.Log("HUAHUAONE");
+						assemblyProcesses[num].SetActive(false);
 						isPositionCorrect = PositionStatus.Correct;
 					}
-					else if (Input.GetKeyDown(KeyCode.N))
+					else
 					{
 						isPositionCorrect = PositionStatus.Incorrect;
 					}
 					break;
 				case 2:
-					if (Input.GetKeyDown(KeyCode.I))
+					Debug.Log("HUAHUA");
+					assemblyProcesses[num].SetActive(true);
+					if (questions[num].isCorrect)
 					{
-						Debug.Log("HUAHUATWO");
+						assemblyProcesses[num].SetActive(false);
 						isPositionCorrect = PositionStatus.Correct;
 					}
-					else if (Input.GetKeyDown(KeyCode.N))
+					else
 					{
 						isPositionCorrect = PositionStatus.Incorrect;
 					}
 					break;
 				case 3:
-					Debug.Log("HUAHUATHREE");
+					assemblyProcesses[num].SetActive(true);
+					if (questions[num].isCorrect)
+					{
+						assemblyProcesses[num].SetActive(false);
+						isPositionCorrect = PositionStatus.Correct;
+					}
+					else
+					{
+						isPositionCorrect = PositionStatus.Incorrect;
+					}
+					break;
 					break;
 				default:
 					Debug.Log(assemblyProcessor.AssemblyProgressStep);

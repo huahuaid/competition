@@ -31,6 +31,7 @@ public class PlacementArea : MonoBehaviour
 	{
 		if (placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
 		{
+			Debug.Log("AAA");
 			ProcessItemPlacement();
 		}
 	}
