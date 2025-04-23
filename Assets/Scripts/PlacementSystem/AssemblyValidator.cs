@@ -12,7 +12,6 @@ public class AssemblyValidator
 		WaterwheelComponent.Link,
 		WaterwheelComponent.WaterwheelAxle,
 		WaterwheelComponent.MainRib,
-		WaterwheelComponent.TailCrossbar,
 		WaterwheelComponent.HorizontalCrossbar,
 		WaterwheelComponent.Paddle,
 		WaterwheelComponent.InclinedBambooTube,

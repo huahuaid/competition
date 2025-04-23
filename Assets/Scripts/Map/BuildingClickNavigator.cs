@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuildingClickNavigator : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class BuildingClickNavigator : MonoBehaviour
 	[Header("点击设置")]
 	[SerializeField] private string buildingName; // 建筑物名称标识
 	[SerializeField] private Color highlightColor = Color.red; // 点击时的高亮颜色
+	[SerializeField] private string targetSceneName; // 要切换的目标场景名称
+
+	[Header("完成状态")]
+	[SerializeField] GameObject finishCollect;
+	[SerializeField] GameObject finishModule;
+	[SerializeField] GameObject finishAssembly;
+	[SerializeField] GameObject AllText;
 
 	private Vector3 targetScale;
 	private SpriteRenderer spriteRenderer;
@@ -21,7 +29,6 @@ public class BuildingClickNavigator : MonoBehaviour
 		targetScale = Vector3.one * normalScale;
 		transform.localScale = targetScale;
 
-		// 获取SpriteRenderer组件并保存原始颜色
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		if (spriteRenderer != null)
 		{
@@ -44,27 +51,51 @@ public class BuildingClickNavigator : MonoBehaviour
 		targetScale = Vector3.one * normalScale;
 	}
 
-	// 鼠标点击时调用
 	private void OnMouseDown()
 	{
-		// 输出点击的建筑物名称
 		Debug.Log("点击了建筑物: " + buildingName);
 
 		// 高亮显示被点击的建筑
 		if (spriteRenderer != null)
 		{
-			StartCoroutine(HighlightBuilding());
+			StartCoroutine(HighlightAndTransition());
 		}
-
-		// 这里可以添加更多点击后的逻辑
-		// 例如触发事件、打开UI面板等
 	}
 
-	// 高亮建筑物的协程
-	IEnumerator HighlightBuilding()
+	IEnumerator HighlightAndTransition()
 	{
+		// 高亮效果
 		spriteRenderer.color = highlightColor;
-		yield return new WaitForSeconds(0.5f); // 高亮持续时间
+		yield return new WaitForSeconds(0.5f);
 		spriteRenderer.color = originalColor;
+
+		// 根据建筑类型激活对应的完成状态
+		switch (buildingName)
+		{
+			case "Collect":
+				if (finishCollect != null) finishCollect.SetActive(true);
+				break;
+			case "Workshop":
+				if (finishModule != null) finishModule.SetActive(true);
+				break;
+			case "WaterTruck":
+				if (finishAssembly != null) finishAssembly.SetActive(true);
+				break;
+		}
+
+		// 如果有目标场景名称，则执行场景过渡
+		if (!string.IsNullOrEmpty(targetSceneName))
+		{
+			// 确保SceneTransitionManager已存在
+			if (SceneTransitionManager.Instance != null)
+			{
+				SceneTransitionManager.Instance.TransitionToScene(targetSceneName);
+			}
+			else
+			{
+				Debug.LogWarning("SceneTransitionManager实例未找到，直接加载场景");
+				SceneManager.LoadScene(targetSceneName);
+			}
+		}
 	}
 }

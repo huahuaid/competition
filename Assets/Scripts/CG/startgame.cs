@@ -9,7 +9,7 @@ public class startgame : MonoBehaviour
     [SerializeField] private AudioSource backgroundMusic; // 背景音乐播放器
 
     [Header("场景设置")]
-    [SerializeField] private string targetSceneName = "Scene_master"; // 目标场景名称
+    [SerializeField] private string targetSceneName = "SceneTimp"; // 目标场景名称
 
     public void OnClickStartButton()
     {
