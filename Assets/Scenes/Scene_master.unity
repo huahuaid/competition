@@ -4673,7 +4673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAllQuestionCorrect: 0
-  isCurrentStepFunctionQuestionCorrect: 0
 --- !u!1 &1540682261 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1974119012456390130, guid: 2e5c2d87f4fadeb44a9a5051d8983e5f, type: 3}
