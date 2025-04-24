@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   itemName: WaterwheelSupport
-  icon: {fileID: 21300000, guid: 2e63baad419205141b977758fba84484, type: 3}
+  icon: {fileID: 21300000, guid: e635a361b7c76b444b2b7378b61bdb7d, type: 3}
   description: The wheel for finish waterwheel
   maxStack: 2

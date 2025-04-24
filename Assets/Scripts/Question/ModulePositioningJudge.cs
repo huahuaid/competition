@@ -66,7 +66,6 @@ public class ModulePositioningJudge : MonoBehaviour
 						isPositionCorrect = PositionStatus.Incorrect;
 					}
 					break;
-					break;
 				default:
 					Debug.Log(assemblyProcessor.AssemblyProgressStep);
 					break;

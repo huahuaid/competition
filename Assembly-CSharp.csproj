@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\DialogueButton.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\CG\skip1.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\CloseDialogByClick.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
     <Compile Include="Assets\Scripts\Scene\SceneTransitionManager.cs" />
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
@@ -101,12 +102,15 @@
     <Compile Include="Assets\Scripts\CollectionMateScene\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\FinishManager.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
     <Compile Include="Assets\Scripts\CollectionMateScene\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\GameReload.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerCollectMateController.cs" />
     <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\AllMaterialManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\PageManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\WaterwheelComponent.cs" />

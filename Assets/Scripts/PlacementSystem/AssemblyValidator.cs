@@ -7,18 +7,17 @@ using System;
 public class AssemblyValidator
 {
     // 正确的组装顺序
-    private static readonly WaterwheelComponent[] _correctOrder = 
-    {
-		WaterwheelComponent.Link,
+	private static readonly WaterwheelComponent[] _correctOrder = 
+	{
 		WaterwheelComponent.WaterwheelAxle,
 		WaterwheelComponent.MainRib,
+		WaterwheelComponent.Link,
 		WaterwheelComponent.HorizontalCrossbar,
 		WaterwheelComponent.Paddle,
+		WaterwheelComponent.WaterwheelSupport,
 		WaterwheelComponent.InclinedBambooTube,
 		WaterwheelComponent.WaterChute,
-		WaterwheelComponent.WaterwheelSupport,
 	};
-
 	private int _currentStep = 0;
 
 	/// <summary>

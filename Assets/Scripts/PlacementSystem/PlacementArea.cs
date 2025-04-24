@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlacementArea : MonoBehaviour
 {
+	public GameObject lastDialog;
 	private bool isCurrentObjectInPlacementArea;
 	public SpriteRenderer spriteRenderer;
 	public Animator animator;
@@ -25,13 +26,19 @@ public class PlacementArea : MonoBehaviour
 	{
 		HandlePlacement();
 		UpdateSpriteVisibility();
+		// 检查AssemblyProcessor中的完成状态
+		if (AssemblyProcessor.isAllPrefab)
+		{
+			InventoryUI.value = false;
+			lastDialog.SetActive(true);
+			BeginAnimator();
+		}
 	}
 
 	private void HandlePlacement()
 	{
 		if (placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
 		{
-			Debug.Log("AAA");
 			ProcessItemPlacement();
 		}
 	}
@@ -52,11 +59,7 @@ public class PlacementArea : MonoBehaviour
 			inventoryManager.RemoveItemByName(itemName);
 			placeableObject.isVisablePut = false;
 
-			// 检查AssemblyProcessor中的完成状态
-			if (AssemblyProcessor.isAllPrefab)
-			{
-				BeginAnimator();
-			}
+
 		}else{
 			placeableObject.isVisablePut = false;
 		}
