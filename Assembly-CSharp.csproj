@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
+    <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
