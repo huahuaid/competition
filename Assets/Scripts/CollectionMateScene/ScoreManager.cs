@@ -6,9 +6,25 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score = 0;
-    //public Text scoreText;
-    public TextMeshPro scoreText;
+    private int bagWholeWeight = 0;
+    private int woodWeight = 0;
+    //public Text bagWholeWeightText;
+    //public TextMeshPro bagWholeWeightText;
+    public TMP_Text bagWholeWeightText;
+    public TMP_Text woodWeightText;
+
+    public PlayerCollision playerCollision;
+
+    //规定背包的总重
+    public int presBagWholeWeight = 15;
+    //规定要收集的木头重量
+    public int presWoodWeight = 10;
+
+    //是否找到足够木头
+    private static bool isEnoughWood = false;
+    //背包是否满
+    private bool isBagFull = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,20 +34,59 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isSuccess();
+        if(isBagFull)
+        {
+            if (isEnoughWood)
+            {
+                Debug.Log("收集成功");
+            }
+            else
+            {
+                Debug.Log("收集失败");
+            }
+        }
         
     }
     
 
-    public void AddScore(int points)
+    public void AddBagWholeWeight(int points)
     {
-        score += points;
-        UpdateScoreDisplay();
+        bagWholeWeight += points;
+        Debug.Log("Bag Current Weight:"+bagWholeWeight);
+        UpdatebagWholeWeightDisplay();
     }
 
-    public int GetScore() => score;
-
-    void UpdateScoreDisplay()
+    public void AddWoodWeight(int point)
     {
-        scoreText.text = "Score: " + score;
+        woodWeight += point;
+        Debug.Log("Wood Weight:"+woodWeight);
+        UpdateWoodWeightDisplay();
+    }
+
+    public int GetbagWholeWeight() => bagWholeWeight;
+    public int GetwoodWeight() => woodWeight;
+    public bool GetisEnoughWood() => isEnoughWood;
+
+    void UpdatebagWholeWeightDisplay()
+    {
+        bagWholeWeightText.text = "Bag Current Weight:" + bagWholeWeight;
+        
+    }
+    void UpdateWoodWeightDisplay()
+    {
+        woodWeightText.text = "Wood Weight:" + woodWeight;
+    }
+
+    public void isSuccess()
+    {
+        if (bagWholeWeight >= presBagWholeWeight)
+        {
+            isBagFull = true;
+            if (woodWeight >= presWoodWeight)
+            {
+                isEnoughWood = true;
+            }
+        }
     }
 }

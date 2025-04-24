@@ -7,6 +7,11 @@ public class PlayerCollision : MonoBehaviour
 {
     public ScoreManager scoreManager;
     public GameManager gameManager;
+
+    //public int bagWholeWeight = 15;
+    //private int bagCurWeight = 0;
+    public int woodWeight = 1;
+    public int stoneWeight = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,30 +26,33 @@ public class PlayerCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.CompareTag("Wood"))
-        //{
-        //    scoreManager.AddScore(10);
-        //    Destroy(other.gameObject);
-        //}
-        //else if (other.CompareTag("Stone"))
-        //{
-        //    gameManager.GameOver();
-        //}
+        // 确保碰撞物体有效
+        if (other == null) return;
 
-        // 处理所有可收集/障碍物
+        // 处理可收集/障碍物
         if (other.CompareTag("Wood") || other.CompareTag("Stone"))
         {
-            Destroy(other.gameObject);  // 碰撞后立即销毁物体
+            // 立即销毁物体实例（不销毁预制体资源）
+            if (other.gameObject.scene.IsValid())
+            {
+                Destroy(other.gameObject);
+            }
 
-            // 根据物体类型执行不同逻辑
+            // 执行对应逻辑
             if (other.CompareTag("Wood"))
             {
-                scoreManager.AddScore(10);
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
             }
             else if (other.CompareTag("Stone"))
             {
-                gameManager.GameOver();
+                scoreManager?.AddBagWholeWeight(stoneWeight);
             }
         }
     }
+
+    //void isSuccess()
+    //{
+    //    if(scoreManager.)
+    //}
 }

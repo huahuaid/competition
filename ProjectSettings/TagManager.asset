@@ -9,6 +9,8 @@ TagManager:
   - Follow
   - Area
   - Inventory
+  - Wood
+  - Stone
   layers:
   - Default
   - TransparentFX

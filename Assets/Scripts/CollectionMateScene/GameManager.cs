@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         Time.timeScale = 0;
         //gameOverPanel.SetActive(true);
-        finalScoreText.text = "Score: " + FindObjectOfType<ScoreManager>().GetScore();
+        //finalScoreText.text = "Score: " + FindObjectOfType<ScoreManager>().GetScore();
     }
 
     public void RestartGame()

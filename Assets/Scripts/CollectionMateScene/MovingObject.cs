@@ -15,7 +15,11 @@ public class MovingObject : MonoBehaviour
         // фад╩мБоЗ╩ы
         if (transform.position.x < destroyX)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            if (gameObject.scene.IsValid())
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
