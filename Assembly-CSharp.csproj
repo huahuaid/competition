@@ -60,6 +60,7 @@
     <Analyzer Include="E:\unity\2022.3.53f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ClickOptions\IncreaseNumber.cs" />
     <Compile Include="Assets\Scripts\CG\startgame.cs" />
     <Compile Include="Assets\Scripts\Question\ModuleFunctionEvaluator.cs" />
     <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
@@ -86,6 +87,8 @@
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyProcessor.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCStateMachine.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\ToggleUI.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\ActivateAndFade.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScenceTrigger.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
@@ -95,6 +98,7 @@
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\PageManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\WaterwheelComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\PickupableItem.cs" />
