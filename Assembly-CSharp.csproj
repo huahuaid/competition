@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\CG\begin.cs" />
     <Compile Include="Assets\Scripts\Question\AssemblyProcessQuesiton.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScence.cs" />
+    <Compile Include="Assets\Scripts\CollectionMateScene\Spawner.cs" />
+    <Compile Include="Assets\Scripts\CollectionMateScene\GameManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
     <Compile Include="Assets\Scripts\Question\ModulePositioningJudge.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\Scene\SceneTransitionManager.cs" />
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
+    <Compile Include="Assets\Scripts\CollectionMateScene\PlayerCollision.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\image\OnlyDisplayOnce.cs" />
     <Compile Include="Assets\Scripts\Error\ErrorDialogManager.cs" />
@@ -95,9 +98,12 @@
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyValidator.cs" />
+    <Compile Include="Assets\Scripts\CollectionMateScene\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
+    <Compile Include="Assets\Scripts\CollectionMateScene\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerController\PlayerCollectMateController.cs" />
     <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />

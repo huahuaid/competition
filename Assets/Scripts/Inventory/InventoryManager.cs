@@ -4,6 +4,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
 	public static InventoryManager Instance;
+	public Item[] items;
 
 	[Header("Inventory Settings")]
 	[SerializeField] private int maxSlots = 12;
@@ -44,7 +45,7 @@ public class InventoryManager : MonoBehaviour
 	{
 		for (int i = 0; i < maxSlots; i++)
 		{
-			inventory.Add(new ItemStack(null, 0));
+			inventory.Add(new ItemStack(items[i], 1));
 		}
 	}
 

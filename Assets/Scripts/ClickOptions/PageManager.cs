@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class PageManager : MonoBehaviour
 {
+	public GameObject game;
 	public int lastPageNumber;
 	public GameObject[] pages; 
 	public static int currentIndex = 0; 
@@ -21,6 +22,7 @@ public class PageManager : MonoBehaviour
 		if (lastPageNumber != 0 && currentIndex == lastPageNumber)
 		{
 			isLastPageReached = true;
+			game.SetActive(true);
 			return;
 		}
 		pages[currentIndex].SetActive(true);
