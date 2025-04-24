@@ -102,12 +102,9 @@
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
-<<<<<<< HEAD
-    <Compile Include="Assets\Scripts\image\ImageHider.cs" />
-=======
     <Compile Include="Assets\Scripts\CollectionMateScene\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerCollectMateController.cs" />
->>>>>>> 6ff8c5babd8ded4b85551a5bdd1b2089c075b957
+    <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\PageManager.cs" />
