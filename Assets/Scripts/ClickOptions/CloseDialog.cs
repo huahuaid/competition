@@ -19,6 +19,7 @@ public class CloseDialog : MonoBehaviour
 		if (gameObject != null)
 		{
 			gameObject.SetActive(false);
+			OnlyDisplayOnce.ToggleOpen = false;
 		}
 	}
 }

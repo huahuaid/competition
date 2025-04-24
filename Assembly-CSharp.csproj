@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ClickOptions\IncreaseNumber.cs" />
     <Compile Include="Assets\Scripts\CG\startgame.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\BackTimp.cs" />
     <Compile Include="Assets\Scripts\Question\ModuleFunctionEvaluator.cs" />
     <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
     <Compile Include="Assets\Scripts\CG\showskip.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\Scripts\image\OnlyDisplayOnce.cs" />
     <Compile Include="Assets\Scripts\Error\ErrorDialogManager.cs" />
     <Compile Include="Assets\Scripts\Map\BuildingClickNavigator.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseDialog.cs" />
