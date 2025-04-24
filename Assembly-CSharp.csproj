@@ -60,11 +60,15 @@
     <Analyzer Include="E:\unity\2022.3.53f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ClickOptions\IncreaseNumber.cs" />
     <Compile Include="Assets\Scripts\CG\startgame.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\BackTimp.cs" />
     <Compile Include="Assets\Scripts\Question\ModuleFunctionEvaluator.cs" />
     <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
     <Compile Include="Assets\Scripts\CG\showskip.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\EnhancedClickDetector.cs" />
     <Compile Include="Assets\Scripts\CG\begin.cs" />
+    <Compile Include="Assets\Scripts\Question\AssemblyProcessQuesiton.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScence.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Inventory\Item.cs" />
@@ -74,21 +78,30 @@
     <Compile Include="Assets\Scripts\ClickOptions\NextUI.cs" />
     <Compile Include="Assets\Scripts\CG\skip1.cs" />
     <Compile Include="Assets\Scripts\Inventory\AutoPickup.cs" />
+    <Compile Include="Assets\Scripts\Scene\SceneTransitionManager.cs" />
+    <Compile Include="Assets\Scripts\NPC\npcTrigger.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\Prompt.cs" />
     <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
+    <Compile Include="Assets\Scripts\image\OnlyDisplayOnce.cs" />
     <Compile Include="Assets\Scripts\Error\ErrorDialogManager.cs" />
+    <Compile Include="Assets\Scripts\Map\BuildingClickNavigator.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\CloseDialog.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyProcessor.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCStateMachine.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlacementArea.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\ToggleUI.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\ActivateAndFade.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScenceTrigger.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyValidator.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
+    <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
-    <Compile Include="Assets\Scripts\NPC\NPCTrigger.cs" />
+    <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\ClickUITextDetector.cs" />
+    <Compile Include="Assets\Scripts\ClickOptions\PageManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\WaterwheelComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\PickupableItem.cs" />

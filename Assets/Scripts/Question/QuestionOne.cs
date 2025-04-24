@@ -17,7 +17,7 @@ private string[] questions = { "QuestionOne", "QuestionTwo", "QuestionThree", "Q
 
 	}
 
-	public bool Judege(string option , string questionName)
+	public bool Judege(string option, string questionName)
 	{
 		int count = 0;
 
@@ -32,4 +32,6 @@ private string[] questions = { "QuestionOne", "QuestionTwo", "QuestionThree", "Q
 
 		return options[count] == option.Split(' ')[0];
 	}
+
+
 }

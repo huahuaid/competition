@@ -31,6 +31,7 @@ public class PlacementArea : MonoBehaviour
 	{
 		if (placeableObject.isVisablePut && isCurrentObjectInPlacementArea)
 		{
+			Debug.Log("AAA");
 			ProcessItemPlacement();
 		}
 	}
@@ -40,17 +41,15 @@ public class PlacementArea : MonoBehaviour
 		// 使用AssemblyProcessor处理组装逻辑
 		bool assemblySuccess = assemblyProcessor.TryAssembleComponent(itemName);
 
-		Debug.Log(assemblyProcessor.AssemblyProgressStep+" "+AssemblyProcessor.isCurrentStepCorrect);
-
 		if (assemblySuccess)
 		{
 			ErrorDialogManager.isInError = false;
-				// 这里传一个当前进度
-				// 当前进度错误就返回错误弹窗
-				// 对了就返回下一个逻辑
-				// 放在一个类里面处理这个问题
+			// 这里传一个当前进度
+			// 当前进度错误就返回错误弹窗
+			// 对了就返回下一个逻辑
+			// 放在一个类里面处理这个问题
 
-				inventoryManager.RemoveItemByName(itemName);
+			inventoryManager.RemoveItemByName(itemName);
 			placeableObject.isVisablePut = false;
 
 			// 检查AssemblyProcessor中的完成状态

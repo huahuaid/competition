@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 	[SerializeField] private List<GameObject> slotObjects;
 
 
+	public static bool value;
 	public GameObject InventoryPlane;
 	public static InventoryUI Instance;
 
@@ -49,9 +50,13 @@ public class InventoryUI : MonoBehaviour
 		// open backpack
 		if (Input.GetKeyDown(KeyCode.Y))
 		{
-			InventoryPlane.SetActive(!InventoryPlane.activeSelf);
-			followSpriteRenderer.sprite = null;
+			value = !value;
+			if (followSpriteRenderer != null)
+			{
+				followSpriteRenderer.sprite = null;
+			}
 		}
+		InventoryPlane.SetActive(value);
 		// init InventoryUI
 		InitializeSlotImages(); 
 	}

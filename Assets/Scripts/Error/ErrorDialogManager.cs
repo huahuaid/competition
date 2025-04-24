@@ -44,6 +44,6 @@ public class ErrorDialogManager : MonoBehaviour
 			isPositionPopup = false;
 			ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
 		}
-		dialogStepError.SetActive(isPositionPopup);
+		dialogPositionError.SetActive(isPositionPopup);
 	}
 }

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ModuleFunctionEvaluator : MonoBehaviour
 {
+	public GameObject assemblyProcess;
+	public AssemblyProcessQuestion question;
 	private int currentStep;
 	public enum FunctionStatus{
 		Correct,    
@@ -12,8 +14,9 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 	public static FunctionStatus isCurrentStepFunctionQuestionCorrect = FunctionStatus.Waiting;
 	public bool isAllQuestionCorrect = false;
 	private AssemblyProcessor assemblyProcessor;
+    private object isPositionCorrect;
 
-	void Start()
+    void Start()
 	{
 		assemblyProcessor = FindObjectOfType<AssemblyProcessor>();
 	}
@@ -32,11 +35,14 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 			switch (assemblyProcessor.AssemblyProgressStep)
 			{
 				case 1:
-					Debug.Log("HUAHUAFUNCTIONONE");
+					assemblyProcess.SetActive(true);
+					if (question.isCorrect)
+					{
+						assemblyProcess.SetActive(false);
+					}
 					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
 					break;
 				case 2:
-					Debug.Log("HUAHUAFUNCTIONTWO");
 					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
 					break;
 				default:
