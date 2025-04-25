@@ -93,7 +93,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   success: {fileID: 0}
-  error: {fileID: 0}
+  spawner: {fileID: 948118664922940122}
+  movingObject: {fileID: 0}
   bagWholeWeightText: {fileID: 6702703688389773773}
   woodWeightText: {fileID: 8914725840508487190}
   playerCollision: {fileID: 0}
@@ -694,7 +695,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3159bce4b7dd0a742874f1e7eedb0ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalScoreText: {fileID: 0}
+  spawner: {fileID: 948118664922940122}
+  scoreManager: {fileID: 741616823049720341}
+  restartDelay: 2
 --- !u!1 &6886132350241820591
 GameObject:
   m_ObjectHideFlags: 0
