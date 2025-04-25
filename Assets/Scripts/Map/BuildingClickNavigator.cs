@@ -14,10 +14,6 @@ public class BuildingClickNavigator : MonoBehaviour
 	[SerializeField] private Color highlightColor = Color.red; // 点击时的高亮颜色
 	[SerializeField] private string targetSceneName; // 要切换的目标场景名称
 
-	[Header("完成状态")]
-	[SerializeField] GameObject finishCollect;
-	[SerializeField] GameObject finishModule;
-	[SerializeField] GameObject finishAssembly;
 	[SerializeField] GameObject AllText;
 
 	private Vector3 targetScale;
@@ -73,13 +69,13 @@ public class BuildingClickNavigator : MonoBehaviour
 		switch (buildingName)
 		{
 			case "Collect":
-				if (finishCollect != null) finishCollect.SetActive(true);
+				FinishManager.isCollect = true;
 				break;
 			case "Workshop":
-				if (finishModule != null) finishModule.SetActive(true);
+				FinishManager.isModule = true;
 				break;
 			case "WaterTruck":
-				if (finishAssembly != null) finishAssembly.SetActive(true);
+				FinishManager.isAssembly = true;
 				break;
 		}
 

@@ -6,6 +6,7 @@ using System;
 /// </summary>
 public class AssemblyProcessor : MonoBehaviour
 {
+	int Index = 0;
 	public static bool isAllPrefab; // 标记所有预制件是否组装完成
 	public static bool isCurrentStepCorrect = true; // 静态变量，向外界传输当前安装步骤是否正确
 
@@ -19,7 +20,7 @@ public class AssemblyProcessor : MonoBehaviour
 		if (isAllPrefab)
 		{
 			Debug.LogWarning("所有部件已组装完成！");
-			isCurrentStepCorrect = false;
+			isCurrentStepCorrect = true;
 			return false;
 		}
 
@@ -38,10 +39,20 @@ public class AssemblyProcessor : MonoBehaviour
 	/// </summary>
 	public bool TryAssembleComponent(WaterwheelComponent component)
 	{
+		/// 测试用的
+		Index++;
+		if (Index == 2)
+		{
+			isAllPrefab = true;
+		}
+
+
+
+
 		if (isAllPrefab)
 		{
 			Debug.LogWarning("所有部件已组装完成！");
-			isCurrentStepCorrect = false;
+			isCurrentStepCorrect = true;
 			return false;
 		}
 

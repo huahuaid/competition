@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class ModuleFunctionEvaluator : MonoBehaviour
 {
-	public GameObject assemblyProcess;
-	public AssemblyProcessQuestion question;
+	public GameObject[] assemblyProcesses;  // 支持多个组装过程
+	public AssemblyProcessQuestion[] questions;  // 支持多个问题
 	private int currentStep;
-	public enum FunctionStatus{
+
+	public enum FunctionStatus
+	{
 		Correct,    
 		Incorrect,  
 		Waiting     
@@ -14,9 +16,8 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 	public static FunctionStatus isCurrentStepFunctionQuestionCorrect = FunctionStatus.Waiting;
 	public bool isAllQuestionCorrect = false;
 	private AssemblyProcessor assemblyProcessor;
-    private object isPositionCorrect;
 
-    void Start()
+	void Start()
 	{
 		assemblyProcessor = FindObjectOfType<AssemblyProcessor>();
 	}
@@ -26,28 +27,34 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 		EvaluateModuleFunction();
 	}
 
-	private void EvaluateModuleFunction(){
-		if( 
-				AssemblyProcessor.isCurrentStepCorrect 
-				&& ModulePositioningJudge.isPositionCorrect == ModulePositioningJudge.PositionStatus.Correct
-		  )
+	private void EvaluateModuleFunction()
+	{
+		if (AssemblyProcessor.isCurrentStepCorrect && ModulePositioningJudge.isPositionCorrect == ModulePositioningJudge.PositionStatus.Correct)
 		{
-			switch (assemblyProcessor.AssemblyProgressStep)
+			currentStep = assemblyProcessor.AssemblyProgressStep - 1; // 获取当前步骤索引
+
+			if (currentStep < questions.Length && currentStep < assemblyProcesses.Length) // 确保索引在范围内
 			{
-				case 1:
-					assemblyProcess.SetActive(true);
-					if (question.isCorrect)
-					{
-						assemblyProcess.SetActive(false);
-					}
-					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
-					break;
-				case 2:
-					ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
-					break;
-				default:
-					break;
+				assemblyProcesses[currentStep].SetActive(true);
+
+				if (questions[currentStep].isCorrect)
+				{
+					assemblyProcesses[currentStep].SetActive(false);
+					isCurrentStepFunctionQuestionCorrect = FunctionStatus.Correct;
+				}
+				else
+				{
+					isCurrentStepFunctionQuestionCorrect = FunctionStatus.Incorrect;
+				}
+
+				// 重置位置状态为等待
+				ModulePositioningJudge.isPositionCorrect = ModulePositioningJudge.PositionStatus.Waiting;
+			}
+			else
+			{
+				Debug.LogWarning("当前步骤超出问题或组装过程的范围");
 			}
 		}
 	}
 }
+
