@@ -50,9 +50,4 @@ public class PlayerCollision : MonoBehaviour
             }
         }
     }
-
-    //void isSuccess()
-    //{
-    //    if(scoreManager.)
-    //}
 }
