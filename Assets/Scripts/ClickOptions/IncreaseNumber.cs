@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 {
-	public static float AllMaterial = 10;
+	public static double AllMaterial = 10;
 	public Button yourButton; // 需要在 Inspector 中拖入的按钮
 	public Text numberText;   // 需要在 Inspector 中拖入的 Text 组件
 
@@ -16,7 +16,7 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 	public static int waterwheelSupport = 0;       // 水车支架
 	public static int inclinedBambooTube = 0;      // 斜装竹筒
 	public static int waterChute = 0;              // 水舰（导水槽）
-	public int current = 0;                         // 当前数字
+	public double current = 0;                         // 当前数字
 
 	// 定义选择的变量
 	public int selectedIndex = 0; // 在 Inspector 中选择变量的索引
@@ -41,34 +41,41 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 			if (current > 0) // 确保当前数字大于0
 			{
 				current--;
-				AllMaterial++;
 
 				// 根据选择的变量更新静态值
 				switch (selectedIndex)
 				{
 					case 0:
 						waterwheelAxle--;
+						AllMaterial++;
 						break;
 					case 1:
 						mainRib--;
+						AllMaterial+=0.25;
 						break;
 					case 2:
 						link--;
+						AllMaterial += 0.25;
 						break;
 					case 3:
 						horizontalCrossbar--;
+						AllMaterial += 0.25;
 						break;
 					case 4:
 						paddle--;
+						AllMaterial += 0.25;
 						break;
 					case 5:
 						waterwheelSupport--;
+						AllMaterial += 1;
 						break;
 					case 6:
 						inclinedBambooTube--;
+						AllMaterial += 0.25;
 						break;
 					case 7:
 						waterChute--;
+						AllMaterial++;
 						break;
 					default:
 						Debug.LogError("选择的索引超出范围！");
@@ -90,34 +97,41 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 		{
 			case 0:
 				waterwheelAxle++;
+				AllMaterial--;
 				break;
 			case 1:
 				mainRib++;
+				AllMaterial-= 0.25;
 				break;
 			case 2:
 				link++;
+				AllMaterial-= 0.25;
 				break;
 			case 3:
 				horizontalCrossbar++;
+				AllMaterial-= 0.25;
 				break;
 			case 4:
 				paddle++;
+				AllMaterial-= 0.25;
 				break;
 			case 5:
 				waterwheelSupport++;
+				AllMaterial--;
 				break;
 			case 6:
 				inclinedBambooTube++;
+				AllMaterial-= 0.25;
 				break;
 			case 7:
 				waterChute++;
+				AllMaterial--;
 				break;
 			default:
 				Debug.LogError("选择的索引超出范围！");
 				break;
 		}
 
-		AllMaterial--; // 减少总材料数量
 		UpdateNumberText(); // 更新文本显示
 	}
 
