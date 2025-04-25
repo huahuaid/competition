@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ImageHider : MonoBehaviour
 {
 	public GameObject gameObject;
-	public Image[] images = new Image[5]; // 初始化一个大小为5的数组
+	public Image[] images = new Image[9]; // 初始化一个大小为5的数组
 	public Button button; // 按钮的引用
 	private int currentImageIndex = 0; // 当前图片索引
 
@@ -14,11 +14,15 @@ public class ImageHider : MonoBehaviour
 	void Start()
 	{
 		// 手动将图片组件添加到数组中
-		images[0] = GameObject.Find("image").GetComponent<Image>();
-		images[1] = GameObject.Find("image (1)").GetComponent<Image>();
-		images[2] = GameObject.Find("image (2)").GetComponent<Image>();
-		images[3] = GameObject.Find("image (3)").GetComponent<Image>();
-		images[4] = GameObject.Find("image (4)").GetComponent<Image>();
+		images[0] = GameObject.Find("image (1)").GetComponent<Image>();
+		images[1] = GameObject.Find("image (2)").GetComponent<Image>();
+		images[2] = GameObject.Find("image (3)").GetComponent<Image>();
+		images[3] = GameObject.Find("image (4)").GetComponent<Image>();
+		images[4] = GameObject.Find("image (5)").GetComponent<Image>();
+		images[5] = GameObject.Find("image (6)").GetComponent<Image>();
+		images[6] = GameObject.Find("image (7)").GetComponent<Image>();
+		images[7] = GameObject.Find("image (8)").GetComponent<Image>();
+		images[8] = GameObject.Find("image (9)").GetComponent<Image>();
 
 		button = GameObject.Find("Button").GetComponent<Button>();
 
@@ -28,8 +32,6 @@ public class ImageHider : MonoBehaviour
 
 	public void TaskOnClick()
 	{
-
-
 		if (currentImageIndex < images.Length - 1)
 		{
 			images[currentImageIndex].gameObject.SetActive(false); // 隐藏当前图片

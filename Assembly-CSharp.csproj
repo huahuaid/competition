@@ -99,6 +99,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\CloseUI.cs" />
     <Compile Include="Assets\Scripts\NPC\NPCController.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\AssemblyValidator.cs" />
+    <Compile Include="Assets\Scripts\Music\BackgroundMusic.cs" />
     <Compile Include="Assets\Scripts\CollectionMateScene\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\PlaceableObject.cs" />
     <Compile Include="Assets\Scripts\Text\TextTyper.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\Scripts\ClickOptions\AllMaterialManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\PageManager.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Music\ClickSoundPlayer.cs" />
     <Compile Include="Assets\Scripts\PlacementSystem\WaterwheelComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory\PickupableItem.cs" />
   </ItemGroup>
