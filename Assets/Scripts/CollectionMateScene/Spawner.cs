@@ -48,4 +48,16 @@ public class Spawner : MonoBehaviour
         }
         return true;
     }
+
+    // 新增停止生成的方法
+    public void StopSpawning()
+    {
+        CancelInvoke("SpawnObject");
+    }
+
+    // 新增暂停移动的方法
+    public void StopMoving()
+    {
+
+    }
 }

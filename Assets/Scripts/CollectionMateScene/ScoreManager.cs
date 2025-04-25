@@ -1,13 +1,18 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
 	public GameObject success;
+
+	//游戏结束
+	public Spawner spawner;
+	public MovingObject movingObject;
+
 	private int bagWholeWeight = 0;
 	private int woodWeight = 0;
-	//public Text bagWholeWeightText;
-	//public TextMeshPro bagWholeWeightText;
+
 	public Text bagWholeWeightText;
 	public Text woodWeightText;
 
@@ -23,8 +28,15 @@ public class ScoreManager : MonoBehaviour
 	//背包是否满
 	private bool isBagFull = false;
 
-	// Start is called before the first frame update
-	void Start()
+    //事件声明，用于结束游戏
+    public event Action OnThresholdReached;
+
+    // 新增公共访问属性
+    public bool IsBagFull => isBagFull;
+    public bool IsEnoughWood => isEnoughWood;
+
+    // Start is called before the first frame update
+    void Start()
 	{
 
 	}
@@ -32,21 +44,32 @@ public class ScoreManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log(isEnoughWood);
+		Debug.Log("isEnoughWood" + isEnoughWood);
+		Debug.Log("isBagFull" + isBagFull);
 		isSuccess();
 		if(isBagFull)
 		{
-			if (isEnoughWood)
+			if (!isEnoughWood)
 			{
-				success.SetActive(true);
-				Debug.Log("收集失败");
+                //spawner.StopSpawning();
+				//movingObject.SetMovementFalse();
+                //success.SetActive(true);
+
+                Debug.Log("收集失败");
+				OnThresholdReached?.Invoke();
+				//重新开始
+				//restart();
 			}
 		}
 		if (isEnoughWood)
 		{
-			success.SetActive(true);
-			Debug.Log("收集成功");
-		}
+            //spawner.StopSpawning();
+            //movingObject.SetMovementFalse();
+            //success.SetActive(true);
+
+            Debug.Log("收集成功");
+            OnThresholdReached?.Invoke();
+        }
 	}
 
 
@@ -97,4 +120,13 @@ public class ScoreManager : MonoBehaviour
 			}
 		}
 	}
+
+	//重新开始
+	//public void restart()
+	//{
+	//	bagWholeWeight = 0;
+	//	woodWeight = 0;
+	//	isBagFull = false;
+	//	isEnoughWood = false;
+ //   }
 }
