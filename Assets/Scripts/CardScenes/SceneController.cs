@@ -36,7 +36,7 @@ public class SceneController : MonoBehaviour
 
     public void Restart()
     {
-        Debug.Log("Button clicked!");
+        Debug.Log("Restart Button clicked!");
         SceneManager.LoadScene(levelName);
     }
 
