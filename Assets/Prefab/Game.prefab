@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   success: {fileID: 0}
+  error: {fileID: 0}
   spawner: {fileID: 948118664922940122}
   movingObject: {fileID: 0}
   bagWholeWeightText: {fileID: 6702703688389773773}
