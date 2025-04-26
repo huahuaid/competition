@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_master.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_First_Level.unity
     guid: 2bdba150337d3a64b83fbe712609f060
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_Storehouse.unity
     guid: 43b819258b08f83489135ea68b533ba2
   - enabled: 1
@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneWorkshop.unity
     guid: 9aa936939a679854f9afdc9a42f9e730
+  - enabled: 1
+    path: Assets/Scenes/Scene_Card_Level1.unity
+    guid: 2e9c16486a8546049b5f8552fbfbc9b7
+  - enabled: 1
+    path: Assets/Scenes/Scene_Card_Level2.unity
+    guid: 61733a40ac77a4540a8bdbc4cdbc7771
   m_configObjects: {}

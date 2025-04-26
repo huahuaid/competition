@@ -62,8 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ClickOptions\IncreaseNumber.cs" />
     <Compile Include="Assets\Scripts\CG\startgame.cs" />
+    <Compile Include="Assets\Scripts\CardScenes\MemoryCard.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\BackTimp.cs" />
     <Compile Include="Assets\Scripts\Question\ModuleFunctionEvaluator.cs" />
+    <Compile Include="Assets\Scripts\CardScenes\SceneController.cs" />
     <Compile Include="Assets\Scripts\Question\QuestionOne.cs" />
     <Compile Include="Assets\Scripts\CG\showskip.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\EnhancedClickDetector.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Assets\Scripts\NPC\DialogueText.cs" />
     <Compile Include="Assets\Scripts\CollectionMateScene\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\ClickOptions\GameReload.cs" />
+    <Compile Include="Assets\Scripts\CardScenes\UIButton.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PlayerCollectMateController.cs" />
     <Compile Include="Assets\Scripts\image\ImageHider.cs" />
     <Compile Include="Assets\Scripts\PlayerController\PositionManager.cs" />
