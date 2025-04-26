@@ -69,7 +69,9 @@
     <Compile Include="Assets\Scripts\ClickOptions\EnhancedClickDetector.cs" />
     <Compile Include="Assets\Scripts\CG\begin.cs" />
     <Compile Include="Assets\Scripts\Question\AssemblyProcessQuesiton.cs" />
+    <Compile Include="Assets\Scripts\CardGame\Card.cs" />
     <Compile Include="Assets\Scripts\Scene\NextLevelScence.cs" />
+    <Compile Include="Assets\Scripts\CardGame\CardManager.cs" />
     <Compile Include="Assets\Scripts\CollectionMateScene\Spawner.cs" />
     <Compile Include="Assets\Scripts\CollectionMateScene\GameManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
