@@ -30,7 +30,9 @@ public class PlayerCollision : MonoBehaviour
         if (other == null) return;
 
         // 处理可收集/障碍物
-        if (other.CompareTag("Wood") || other.CompareTag("Stone"))
+        if (other.CompareTag("Wood") || other.CompareTag("Stone") || other.CompareTag("Workpiece_0") ||
+            other.CompareTag("Workpiece_1") || other.CompareTag("Workpiece_2") ||
+            other.CompareTag("Workpiece_3") || other.CompareTag("Workpiece_4"))
         {
             // 立即销毁物体实例（不销毁预制体资源）
             if (other.gameObject.scene.IsValid())
@@ -47,6 +49,41 @@ public class PlayerCollision : MonoBehaviour
             else if (other.CompareTag("Stone"))
             {
                 scoreManager?.AddBagWholeWeight(stoneWeight);
+            }
+            else if (other.CompareTag("Workpiece_1"))
+            {
+                Debug.Log("Workpiece_1");
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
+                scoreManager?.CollectWorkPieces(1);
+            }
+            else if (other.CompareTag("Workpiece_2"))
+            {
+                Debug.Log("Workpiece_2");
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
+                scoreManager?.CollectWorkPieces(2);
+            }
+            else if (other.CompareTag("Workpiece_3"))
+            {
+                Debug.Log("Workpiece_3");
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
+                scoreManager?.CollectWorkPieces(3);
+            }
+            else if (other.CompareTag("Workpiece_4"))
+            {
+                Debug.Log("Workpiece_4");
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
+                scoreManager?.CollectWorkPieces(4);
+            }
+            else if (other.CompareTag("Workpiece_0"))
+            {
+                Debug.Log("Workpiece_0");
+                scoreManager?.AddWoodWeight(woodWeight);
+                scoreManager?.AddBagWholeWeight(woodWeight);
+                scoreManager?.CollectWorkPieces(0);
             }
         }
     }

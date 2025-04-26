@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class ScoreManager : MonoBehaviour
 
 	private int bagWholeWeight = 0;
 	private int woodWeight = 0;
+	private bool[] workpieces = { false, false, false, false, false };
 
 	public Text bagWholeWeightText;
 	public Text woodWeightText;
@@ -108,7 +110,10 @@ public class ScoreManager : MonoBehaviour
 			isBagFull = true;
 			if (woodWeight >= presWoodWeight)
 			{
-				isEnoughWood = true;
+				if (workpieces.All(b => b))
+				{
+                    isEnoughWood = true;
+                }
 			}
 		}
 
@@ -116,17 +121,16 @@ public class ScoreManager : MonoBehaviour
 		{
 			if (woodWeight >= presWoodWeight)
 			{
-				isEnoughWood = true;
-			}
+                if (workpieces.All(b => b))
+                {
+                    isEnoughWood = true;
+                }
+            }
 		}
 	}
 
-	//重新开始
-	//public void restart()
-	//{
-	//	bagWholeWeight = 0;
-	//	woodWeight = 0;
-	//	isBagFull = false;
-	//	isEnoughWood = false;
- //   }
+	public void CollectWorkPieces(int index)
+	{
+		workpieces[index] = true;
+	}
 }

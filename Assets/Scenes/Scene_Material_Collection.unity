@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 715174801531998836, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.072472505
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 715174801531998836, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -299,6 +299,30 @@ PrefabInstance:
       propertyPath: spawner
       value: 
       objectReference: {fileID: 1983111471}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2692265356916261525, guid: 720f47ce15d875341957358bafc6c3ba, type: 3}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 5235903361515618420, guid: aa916f5c1fba3304a8e582d91dbcbe49, type: 3}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 2402775673509271237, guid: f5539365e3606964a87d7bf0efad6954, type: 3}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 5544699054286934361, guid: 96d97a28d965cd148b939da7f154bdd6, type: 3}
+    - target: {fileID: 948118664922940122, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
+      propertyPath: prefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 7720132670069000884, guid: b237080a2b4ace54b9463ad5a278e12b, type: 3}
     - target: {fileID: 2735523596867801447, guid: 2b65b6708f5277740bc2fff933cd461b, type: 3}
       propertyPath: player
       value: 

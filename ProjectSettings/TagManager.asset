@@ -11,6 +11,11 @@ TagManager:
   - Inventory
   - Wood
   - Stone
+  - Workpiece_1
+  - Workpiece_2
+  - Workpiece_3
+  - Workpiece_4
+  - Workpiece_0
   layers:
   - Default
   - TransparentFX
