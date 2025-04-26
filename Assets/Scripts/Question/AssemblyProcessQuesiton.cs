@@ -34,6 +34,7 @@ public class AssemblyProcessQuestion : MonoBehaviour, IPointerClickHandler
 	{
 		// 获取正确答案的第一个字符
 		char correctFirstCharacter = CorrectAnswer.Length > 0 ? CorrectAnswer[0] : '\0';
+		Debug.Log(firstCharacter);
 
 		// 比较并返回结果
 		return firstCharacter == correctFirstCharacter;

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlacementArea : MonoBehaviour
 {
+	public GameObject[] waterModule;
 	public GameObject lastDialog;
 	private bool isCurrentObjectInPlacementArea;
 	public SpriteRenderer spriteRenderer;
@@ -27,7 +28,7 @@ public class PlacementArea : MonoBehaviour
 		HandlePlacement();
 		UpdateSpriteVisibility();
 		// 检查AssemblyProcessor中的完成状态
-		if (AssemblyProcessor.isAllPrefab)
+		if (AssemblyProcessor.isAllPrefab && ModuleFunctionEvaluator.isAllQuestionOver)
 		{
 			InventoryUI.value = false;
 			lastDialog.SetActive(true);
@@ -99,8 +100,25 @@ public class PlacementArea : MonoBehaviour
 		SceneManager.LoadScene(2);
 	}
 
+	
 	private void BeginAnimator()
 	{
 		animator.SetBool("iswork", true);
+		SetWaterModulesOpacity(1f); 
 	}
+
+	private void SetWaterModulesOpacity(float alpha)
+	{
+		foreach (GameObject module in waterModule)
+		{
+			SpriteRenderer moduleSpriteRenderer = module.GetComponent<SpriteRenderer>();
+			if (moduleSpriteRenderer != null)
+			{
+				Color color = moduleSpriteRenderer.color;
+				color.a = alpha; 
+				moduleSpriteRenderer.color = color;
+			}
+		}
+	}
+
 }

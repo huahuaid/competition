@@ -1,4 +1,3 @@
-
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!162 &1
@@ -19,19 +18,19 @@ EditorUserSettings:
       value: 5702565e540c5b0e550c5c7a167b0c444e4e4979792d2766752b4860b1e2356a
       flags: 0
     RecentlyUsedSceneGuid-4:
-      value: 5a50555f56035008540f5a75497b0a44104e192c282b7f31797b1b6ae7b76768
+      value: 5153570355075b5d5b0c092648760e4415154e7f7d2a75697d2a1e60e3b23060
       flags: 0
     RecentlyUsedSceneGuid-5:
-      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
+      value: 5a50555f56035008540f5a75497b0a44104e192c282b7f31797b1b6ae7b76768
       flags: 0
     RecentlyUsedSceneGuid-6:
-      value: 5b005153540659080e5c08744474084412164b2b2d2a77357c2b1f6bb7b86c6c
+      value: 515250075c0c595e5f5a5e71122159444e4e4a2f7a7d7f602f284d66b4b76661
       flags: 0
     RecentlyUsedSceneGuid-7:
       value: 53030d5501545b5e580f5f2149250a44464e1e7e2d7f7760792c1b65bab0656e
       flags: 0
     RecentlyUsedSceneGuid-8:
-      value: 5153570355075b5d5b0c092648760e4415154e7f7d2a75697d2a1e60e3b23060
+      value: 5b005153540659080e5c08744474084412164b2b2d2a77357c2b1f6bb7b86c6c
       flags: 0
     RecentlyUsedSceneGuid-9:
       value: 060100055c565d09550d0e2114250a4446151d2e757823612c2d1f31e7e3366e
@@ -55,4 +54,3 @@ EditorUserSettings:
   m_VCAllowAsyncUpdate: 1
   m_VCScanLocalPackagesOnConnect: 1
   m_ArtifactGarbageCollection: 1
-

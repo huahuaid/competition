@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ModuleFunctionEvaluator : MonoBehaviour
 {
+	public static bool isAllQuestionOver;
 	public GameObject[] assemblyProcesses;  // 支持多个组装过程
 	public AssemblyProcessQuestion[] questions;  // 支持多个问题
 	private int currentStep;
@@ -41,6 +42,10 @@ public class ModuleFunctionEvaluator : MonoBehaviour
 				{
 					assemblyProcesses[currentStep].SetActive(false);
 					isCurrentStepFunctionQuestionCorrect = FunctionStatus.Correct;
+					if (assemblyProcessor.AssemblyProgressStep == 8)
+					{
+						isAllQuestionOver = true;
+					}
 				}
 				else
 				{

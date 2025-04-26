@@ -29,7 +29,7 @@ public class ClickSoundPlayer : MonoBehaviour
 		}
 	}
 
-	private void PlayClickSound()
+	public void PlayClickSound()
 	{
 		if (clickSound == null)
 		{
