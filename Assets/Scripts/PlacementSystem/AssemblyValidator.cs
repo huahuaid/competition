@@ -9,12 +9,12 @@ public class AssemblyValidator
     // 正确的组装顺序
 	private static readonly WaterwheelComponent[] _correctOrder = 
 	{
+		WaterwheelComponent.WaterwheelSupport,
 		WaterwheelComponent.WaterwheelAxle,
 		WaterwheelComponent.MainRib,
 		WaterwheelComponent.Link,
 		WaterwheelComponent.HorizontalCrossbar,
 		WaterwheelComponent.Paddle,
-		WaterwheelComponent.WaterwheelSupport,
 		WaterwheelComponent.InclinedBambooTube,
 		WaterwheelComponent.WaterChute,
 	};

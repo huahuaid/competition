@@ -359,8 +359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Collect: {fileID: 1110349279}
-  Module: {fileID: 1662329082}
-  Assembly: {fileID: 182754467}
+  Module: {fileID: 182754467}
+  Assembly: {fileID: 1662329082}
 --- !u!1 &182754467
 GameObject:
   m_ObjectHideFlags: 0
