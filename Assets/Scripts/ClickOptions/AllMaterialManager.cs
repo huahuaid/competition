@@ -7,19 +7,20 @@ public class AllMaterialManager : MonoBehaviour
     public GameObject backCanvas;
     public GameObject errorCanvas;
     public Text text;
-    public Button checkButton; // 按钮引用
+	public Text BambooText;
+	public Button checkButton; // 按钮引用
 
-    // 静态变量来判断是否达标
-    public static bool isMaterialsSufficient = false;
+	// 静态变量来判断是否达标
+	public static bool isMaterialsSufficient = false;
 
-    // 设定每种材料的达标数量
-    private int requiredWaterwheelAxle = 1;          // 水车中轴达标数量
-    private int requiredMainRib = 4;                // 主辐条达标数量
-    private int requiredLink = 4;                     // 连杆达标数量
-    private int requiredHorizontalCrossbar = 4;      // 横杠达标数量
-    private int requiredPaddle = 4;                   // 刮板达标数量
-    private int requiredWaterwheelSupport = 1;       // 水车支架达标数量
-	private int requiredInclinedBambooTube = 4;      // 斜装竹筒达标数量
+	// 设定每种材料的达标数量
+	private int requiredWaterwheelAxle = 1;          // 水车中轴达标数量
+	private int requiredMainRib = 8;                // 主辐条达标数量
+	private int requiredLink = 16;                     // 连杆达标数量
+	private int requiredHorizontalCrossbar = 8;      // 横杠达标数量
+	private int requiredPaddle = 8;                   // 刮板达标数量
+	private int requiredWaterwheelSupport = 1;       // 水车支架达标数量
+	private int requiredInclinedBambooTube = 8;      // 斜装竹筒达标数量
 	private int requiredWaterChute = 1;               // 水舰（导水槽）达标数量
 
 	void Start()
@@ -29,7 +30,8 @@ public class AllMaterialManager : MonoBehaviour
 
 	void Update()
 	{
-		text.text = "剩余数量: " + IncreaseNumber.AllMaterial;
+		text.text = ": " + IncreaseNumber.AllMaterial;
+		BambooText.text = ": "+IncreaseNumber.AllMaterialBamboo;
 	}
 
 	void CheckMaterials()

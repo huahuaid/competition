@@ -13,54 +13,57 @@ public class ScoreManager : MonoBehaviour
 
 	private int bagWholeWeight = 0;
 	private int woodWeight = 0;
+	private int bambooWeight = 0; // 竹子收集量
 
 	public Text bagWholeWeightText;
 	public Text woodWeightText;
+	public Text bambooWeightText; // 竹子UI显示
 
 	public PlayerCollision playerCollision;
 
 	// 规定背包的总重
-	public int presBagWholeWeight = 15;
+	private int presBagWholeWeight = 70;
 	// 规定要收集的木头重量
-	public int presWoodWeight = 10;
+	private int presWoodWeight = 50;
+	// 规定要收集的竹子数量
+	private int presBambooCount = 8;
 
-	// 是否找到足够木头
+	// 状态标志
 	private static bool isEnoughWood = false;
-	// 背包是否满
+	private static bool isEnoughBamboo = false; // 是否收集足够竹子
 	private bool isBagFull = false;
 
 	// 事件声明，用于结束游戏
 	public event Action OnThresholdReached;
 
-	// 新增公共访问属性
+	// 公共访问属性
 	public bool IsBagFull => isBagFull;
 	public bool IsEnoughWood => isEnoughWood;
+	public bool IsEnoughBamboo => isEnoughBamboo;
 
-	// 点击音效播放器
 	private ClickSoundPlayer clickSoundPlayer;
 
-	// Start is called before the first frame update
 	void Start()
 	{
-		clickSoundPlayer = FindObjectOfType<ClickSoundPlayer>(); // 查找场景中的 ClickSoundPlayer 实例
+		clickSoundPlayer = FindObjectOfType<ClickSoundPlayer>();
 	}
 
-	// Update is called once per frame
 	void Update()
 	{
-		Debug.Log("isEnoughWood: " + isEnoughWood);
-		Debug.Log("isBagFull: " + isBagFull);
+		Debug.Log($"Wood: {woodWeight}/{presWoodWeight}, Bamboo: {bambooWeight}/{presBambooCount}, Bag: {bagWholeWeight}/{presBagWholeWeight}");
 		isSuccess();
+
 		if (isBagFull)
 		{
-			if (!isEnoughWood)
+			if (!isEnoughWood || !isEnoughBamboo)
 			{
 				error.SetActive(true);
 				Debug.Log("收集失败");
 				OnThresholdReached?.Invoke();
 			}
 		}
-		if (isEnoughWood)
+
+		if (isEnoughWood && isEnoughBamboo)
 		{
 			success.SetActive(true);
 			Debug.Log("收集成功");
@@ -71,63 +74,55 @@ public class ScoreManager : MonoBehaviour
 	public void AddBagWholeWeight(int points)
 	{
 		bagWholeWeight += points;
-		Debug.Log("Bag Current Weight: " + bagWholeWeight);
 		UpdatebagWholeWeightDisplay();
-
-		// 播放点击音效
 		clickSoundPlayer?.PlayClickSound();
 	}
 
 	public void AddWoodWeight(int point)
 	{
 		woodWeight += point;
-		Debug.Log("Wood Weight: " + woodWeight);
 		UpdateWoodWeightDisplay();
-
 		clickSoundPlayer?.PlayClickSound();
 	}
 
-	public int GetbagWholeWeight() => bagWholeWeight;
-	public int GetwoodWeight() => woodWeight;
-	public bool GetisEnoughWood() => isEnoughWood;
+	public void AddBambooWeight(int point)
+	{
+		bambooWeight += point;
+		UpdateBambooWeightDisplay();
+		clickSoundPlayer?.PlayClickSound();
+	}
 
 	void UpdatebagWholeWeightDisplay()
 	{
-		bagWholeWeightText.text = "当前背包重量: " + bagWholeWeight;
+		bagWholeWeightText.text = "当前背包重量: " + bagWholeWeight+"/"+presBagWholeWeight;
 	}
 
 	void UpdateWoodWeightDisplay()
 	{
-		woodWeightText.text = "木头重量: " + woodWeight;
+		woodWeightText.text = ": " + woodWeight+"/"+presWoodWeight;
+	}
+
+	void UpdateBambooWeightDisplay()
+	{
+		bambooWeightText.text = ": " + bambooWeight+"/"+presBambooCount;
 	}
 
 	public void isSuccess()
 	{
-		if (bagWholeWeight >= presBagWholeWeight)
-		{
-			isBagFull = true;
-			if (woodWeight >= presWoodWeight)
-			{
-				isEnoughWood = true;
-			}
-		}
+		// 检查背包是否满
+		isBagFull = bagWholeWeight >= presBagWholeWeight;
 
-		if (bagWholeWeight <= presBagWholeWeight)
-		{
-			if (woodWeight >= presWoodWeight)
-			{
-				isEnoughWood = true;
-			}
-		}
+		// 检查木头是否足够
+		isEnoughWood = woodWeight >= presWoodWeight;
+
+		// 检查竹子是否足够
+		isEnoughBamboo = bambooWeight >= presBambooCount;
 	}
 
-	// 重新开始
-	// public void restart()
-	// {
-	//     bagWholeWeight = 0;
-	//     woodWeight = 0;
-	//     isBagFull = false;
-	//     isEnoughWood = false;
-	// }
+	// 获取当前收集量
+	public int GetbagWholeWeight() => bagWholeWeight;
+	public int GetwoodWeight() => woodWeight;
+	public int GetBambooWeight() => bambooWeight;
+	public bool GetisEnoughWood() => isEnoughWood;
+	public bool GetisEnoughBamboo() => isEnoughBamboo;
 }
-

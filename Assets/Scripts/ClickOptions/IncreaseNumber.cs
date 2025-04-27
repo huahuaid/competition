@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 {
-	public static double AllMaterial = 10;
+	public static double AllMaterial = 50;
+	public static double AllMaterialBamboo = 8;
 	public Button yourButton; // 需要在 Inspector 中拖入的按钮
 	public Text numberText;   // 需要在 Inspector 中拖入的 Text 组件
 
@@ -47,35 +48,35 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 				{
 					case 0:
 						waterwheelAxle--;
-						AllMaterial++;
+						AllMaterial+=2;
 						break;
 					case 1:
 						mainRib--;
-						AllMaterial+=0.25;
+						AllMaterial+=1;
 						break;
 					case 2:
 						link--;
-						AllMaterial += 0.25;
+						AllMaterial += 1;
 						break;
 					case 3:
 						horizontalCrossbar--;
-						AllMaterial += 0.25;
+						AllMaterial += 1;
 						break;
 					case 4:
 						paddle--;
-						AllMaterial += 0.25;
+						AllMaterial += 1;
 						break;
 					case 5:
 						waterwheelSupport--;
-						AllMaterial += 1;
+						AllMaterial += 5;
 						break;
 					case 6:
 						inclinedBambooTube--;
-						AllMaterial += 0.25;
+						AllMaterialBamboo += 1;
 						break;
 					case 7:
 						waterChute--;
-						AllMaterial++;
+						AllMaterial+=2;
 						break;
 					default:
 						Debug.LogError("选择的索引超出范围！");
@@ -97,35 +98,35 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 		{
 			case 0:
 				waterwheelAxle++;
-				AllMaterial--;
+				AllMaterial-=2;
 				break;
 			case 1:
 				mainRib++;
-				AllMaterial-= 0.25;
+				AllMaterial-= 1;
 				break;
 			case 2:
 				link++;
-				AllMaterial-= 0.25;
+				AllMaterial-= 1;
 				break;
 			case 3:
 				horizontalCrossbar++;
-				AllMaterial-= 0.25;
+				AllMaterial-= 1;
 				break;
 			case 4:
 				paddle++;
-				AllMaterial-= 0.25;
+				AllMaterial-= 1;
 				break;
 			case 5:
 				waterwheelSupport++;
-				AllMaterial--;
+				AllMaterial-=5;
 				break;
 			case 6:
 				inclinedBambooTube++;
-				AllMaterial-= 0.25;
+				AllMaterialBamboo -= 1;
 				break;
 			case 7:
 				waterChute++;
-				AllMaterial--;
+				AllMaterial-=2;
 				break;
 			default:
 				Debug.LogError("选择的索引超出范围！");

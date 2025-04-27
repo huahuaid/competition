@@ -11,6 +11,7 @@ TagManager:
   - Inventory
   - Wood
   - Stone
+  - Bamboo
   layers:
   - Default
   - TransparentFX

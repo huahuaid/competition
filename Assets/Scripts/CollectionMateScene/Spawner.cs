@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Header("生成设置")]
-    public GameObject[] prefabs; // 0:木头 1:石头
+    public GameObject[] prefabs; // 0:木头 1:石头 2:竹子
     public float spawnInterval = 2f;
     public float moveSpeed = 5f;
 
