@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerCollectMateController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float yBoundary = 4.5f;
+    public float yUpperBoundary = 4.5f;    // 上边界
+    public float yLowerBoundary = -4.5f;   // 下边界
     private Rigidbody2D rb;
 
     // 角色可否移动的静态控制变量
@@ -28,8 +29,12 @@ public class PlayerCollectMateController : MonoBehaviour
         Vector2 movement = new Vector2(0, moveInput * moveSpeed);
         rb.velocity = movement;
 
-        // 限制Y轴移动范围
-        float clampedY = Mathf.Clamp(rb.position.y, -yBoundary, yBoundary);
+        // 限制Y轴移动范围并确保边界顺序正确
+        float clampedY = Mathf.Clamp(
+            rb.position.y,
+            Mathf.Min(yLowerBoundary, yUpperBoundary),
+            Mathf.Max(yLowerBoundary, yUpperBoundary)
+        );
         rb.position = new Vector2(rb.position.x, clampedY);
     }
 
