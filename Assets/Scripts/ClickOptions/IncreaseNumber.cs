@@ -141,7 +141,7 @@ public class IncreaseNumber : MonoBehaviour, IPointerClickHandler
 	{
 		if (numberText != null)
 		{
-			numberText.text = current.ToString(); // 显示当前数字
+			numberText.text = "数量:"+current.ToString(); // 显示当前数字
 		}
 	}
 }
